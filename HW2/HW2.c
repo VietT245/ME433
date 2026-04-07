@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "hardware_pwm.h"
+#include <unistd.h>
 
 
 int main()
