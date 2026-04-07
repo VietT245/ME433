@@ -4,6 +4,9 @@
 
 int main()
 {
+    stdio_init_all();
+    sleep_ms(2000);
+
     const uint pin = 16;
     gpio_set_function(pin, GPIO_FUNC_PWM);
 
