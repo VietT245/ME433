@@ -42,16 +42,22 @@ pico_set_program_version(HW3 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(HW3 0)
-pico_enable_stdio_usb(HW3 0)
+pico_enable_stdio_usb(HW3 1)
 
 # Add the standard library to the build
 target_link_libraries(HW3
-        pico_stdlib)
+        pico_stdlib
+        hardware_i2c)
 
 # Add the standard include files to the build
 target_include_directories(HW3 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
+
+# Add any user requested libraries
+target_link_libraries(HW3 
+        hardware_i2c
+        )
 
 pico_add_extra_outputs(HW3)
 
