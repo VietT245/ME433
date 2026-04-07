@@ -14,7 +14,10 @@ int main(void)
     pwm_set_freq(servo, 50); //50 Hz for RC servo
 
     while (1) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        // Sweep 0 -> 180
+        for (int a = 0; a <= 180; a++){
+            pwm_set_duty_us(servo, angle_to_us(a));
+            usleep(10000); //10 µs step
+        }
     }
 }
