@@ -7,7 +7,7 @@ int main()
     stdio_init_all();
     sleep_ms(2000);
 
-    const uint pin = 16;
+    const uint pin = 0;
     gpio_set_function(pin, GPIO_FUNC_PWM);
 
     uint slice = pwm_gpio_to_slice_num(pin);
