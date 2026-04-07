@@ -17,11 +17,22 @@ int main()
         //Sweep 1000–2000 µs
         for (int us = 1000; us <= 2000; us++){
             pwm_set_chan_level(slice, channel, us);
+
+            // Convert pulse width to angle (approx)
+            float angle = (us - 1000) * (180.0f / 1000.0f);
+
+            printf("Pulse: %d us   Angle: %.1f degrees\n", us, angle);
+
             sleep_ms(10);
         }
         // Sweep backward
         for (int us = 2000; us >= 1000; us--){
             pwm_set_chan_level(slice, channel, us);
+
+            float angle = (us - 1000) * (180.0f / 1000.0f);
+
+            printf("Pulse: %d us   Angle: %.1f degrees\n", us, angle);
+
             sleep_ms(10);
         }
     }
