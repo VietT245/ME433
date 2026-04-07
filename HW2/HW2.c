@@ -12,6 +12,7 @@ int main()
 
     uint slice = pwm_gpio_to_slice_num(pin);
     uint channel = pwm_gpio_to_channel(pin);
+    pwm_set_clkdiv(slice, 2.0f);
 
     pwm_set_wrap(slice, 20000); //20 ms period (50hz)
     pwm_set_enabled(slice, true);
