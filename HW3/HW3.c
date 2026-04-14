@@ -14,7 +14,7 @@
 #define OLAT 0x0A
 
 // Pico heartbeat LED
-#define Heartbeat_LED 25
+#define HEARTBEAT_LED 25
 
 // I2C helper functions
 
@@ -37,6 +37,10 @@ uint8_t read_reg(uint8_t addr, uint8_t reg){
 int main()
 {
     stdio_init_all();
+
+    // Initializing heartbeat LED
+    gpio_init(HEARTBEAT_LED);
+    gpio_set_dir(HEARTBEAT_LED, GPIO_OUT);
 
     // I2C Initialisation. Using it at 400Khz.
     i2c_init(I2C_PORT, 400*1000);
