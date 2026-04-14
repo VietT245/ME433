@@ -16,7 +16,15 @@
 // Pico heartbeat LED
 #define Heartbeat_LED 25
 
+// I2C helper functions
 
+// Writing 1 byte to a register
+void write_reg(uint8_t addr, uint8_t reg, uint8_t value){
+    uint8_t buf[2];
+    buf[0] = reg;
+    buf[1] = value;
+    i2c_write_blocking(I2C_PORT, addr, buf, 2, false);
+}
 
 int main()
 {
