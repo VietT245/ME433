@@ -68,8 +68,13 @@ int main()
         sleep_ms(300);
     }
 
+
+    // Button to LED Control
     while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        // Heartbeat LED button toggle
+        gpio_put(HEARTBEAT_LED, 1);
+        sleep_ms(100);
+        gpio_put(HEARTBEAT_LED, 0);
+        sleep_ms(100);
     }
 }
