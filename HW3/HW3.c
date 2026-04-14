@@ -2,12 +2,19 @@
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 
-// I2C defines
-// This example will use I2C0 on GPIO8 (SDA) and GPIO9 (SCL) running at 400KHz.
-// Pins can be changed, see the GPIO function select table in the datasheet for information on GPIO assignments
+// I2C settings
 #define I2C_PORT i2c0
-#define I2C_SDA 8
-#define I2C_SCL 9
+#define I2C_SDA 4
+#define I2C_SCL 5
+#define MCP23008_ADDR 0x20 // A0=A1=A2=GND
+
+// MCP23008 registers
+#define IODIR 0x00
+#define GPIO 0x09
+#define OLAT 0x0A
+
+// Pico heartbeat LED
+#define Heartbeat_LED 25
 
 
 
