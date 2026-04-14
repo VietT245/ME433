@@ -26,6 +26,14 @@ void write_reg(uint8_t addr, uint8_t reg, uint8_t value){
     i2c_write_blocking(I2C_PORT, addr, buf, 2, false);
 }
 
+// Read 1 byte from a register
+uint8_t read_reg(uint8_t addr, uint8_t reg){
+    uint8_t val;
+    i2c_write_blocking(I2C_PORT, addr, &reg, 1, true);
+    i2c_read_blocking(I2C_PORT, addr, &val, 1, false);
+    return val;
+}
+
 int main()
 {
     stdio_init_all();
