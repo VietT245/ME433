@@ -82,5 +82,12 @@ int main()
 
         // Extract GP0 (bit 0)
         uint8_t button = gpio_val & 0x01;
+
+        // Active low button (pressed = 0)
+        if (button == 0){
+            write_reg(MCP23008_ADDR, OLAT, 0x80); // GP7 ON
+        } else {
+            write_reg(MCP23008_ADDR, OLAT, 0x00); // GP7 OFF
+        }
     }
 }
