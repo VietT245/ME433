@@ -76,5 +76,11 @@ int main()
         sleep_ms(100);
         gpio_put(HEARTBEAT_LED, 0);
         sleep_ms(100);
+
+        // Reading GPIO register
+        uint8_t gpio_val = read_reg(MCP23008_ADDR, GPIO);
+
+        // Extract GP0 (bit 0)
+        uint8_t button = gpio_val & 0x01;
     }
 }
