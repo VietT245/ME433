@@ -15,6 +15,7 @@
 
 // Pico heartbeat LED
 #define HEARTBEAT_LED 7
+#define BUTTON_PIN 0
 
 // I2C helper functions
 
@@ -42,7 +43,12 @@ int main()
     gpio_init(HEARTBEAT_LED);
     gpio_set_dir(HEARTBEAT_LED, GPIO_OUT);
 
-    // I2C Initialisation. Using it at 400Khz.
+    // Initializing button pin
+    gpio_init(BUTTON_PIN);
+    gpio_set_dir(BUTTON_PIN, GPIO_IN);
+    gpio_pull_up(BUTTON_PIN);
+
+    // I2C Initialization. Using it at 400Khz.
     i2c_init(I2C_PORT, 400*1000);    
     gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
     gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
@@ -72,10 +78,17 @@ int main()
     // Button to LED Control
     while (true) {
         // Heartbeat LED button toggle
-        gpio_put(HEARTBEAT_LED, 1);
-        sleep_ms(100);
-        gpio_put(HEARTBEAT_LED, 0);
-        sleep_ms(100);
+        bool pressed = (gpio_get(BUTTON_PIN) == 0); // Active low
+        
+        if (pressed){
+            // Hold LED on solid while button is held
+            gpio_put(HEARTBEAT_LED, 1);
+        } else {
+            gpio_put(HEARTBEAT_LED, 1);
+            sleep_ms(100);
+            gpio_put(HEARTBEAT_LED, 0);
+            sleep_ms(100);
+        }
 
         // Reading GPIO register
         uint8_t gpio_val = read_reg(MCP23008_ADDR, GPIO);
