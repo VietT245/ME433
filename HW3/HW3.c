@@ -14,7 +14,7 @@
 #define OLAT 0x0A
 
 // Pico heartbeat LED
-#define HEARTBEAT_LED 25
+#define HEARTBEAT_LED 7
 
 // I2C helper functions
 
