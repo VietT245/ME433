@@ -67,12 +67,12 @@ int main()
     write_reg(MCP23008_ADDR, OLAT, 0x00);
 
     // Testing LED
-    for (int i = 0; i < 5; i++){
-        write_reg(MCP23008_ADDR, OLAT, 0x80); // GP7 ON
-        sleep_ms(300);
-        write_reg(MCP23008_ADDR, OLAT, 0x00); // GP7 OFF
-        sleep_ms(300);
-    }
+    // for (int i = 0; i < 5; i++){
+    //     write_reg(MCP23008_ADDR, OLAT, 0x80); // GP7 ON
+    //     sleep_ms(300);
+    //     write_reg(MCP23008_ADDR, OLAT, 0x00); // GP7 OFF
+    //     sleep_ms(300);
+    // }
 
 
     // Button to LED Control
