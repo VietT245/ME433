@@ -21,6 +21,15 @@
 int main()
 {
     stdio_init_all();
+    
+    // Initialize I2C
+    i2c_init(i2c_default, 400000); // 400kHz
+    gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
+    gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
+    gpio_pull_up(I2C_SDA);
+    gpio_pull_up(I2C_SCL);
+
+    // Initialize the display
     ssd1306_setup();
 
     while (true) {
