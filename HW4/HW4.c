@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
+#include "ssd1306.h"
 
 // I2C settings
 #define I2C_PORT i2c0
@@ -20,9 +21,14 @@
 int main()
 {
     stdio_init_all();
+    ssd1306_setup();
 
     while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        ssd1306_drawPixel(1,1,1);
+        ssd1306_update();
+        sleep_ms(20);
+        ssd1306_drawPixel(1,1,0);
+        ssd1306_update();
+        sleep_ms(20);
     }
 }
