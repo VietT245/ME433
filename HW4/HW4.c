@@ -21,8 +21,15 @@
 int main()
 {
     stdio_init_all();
-    
-    // Initialize I2C
+
+    // Initialize Heartbeat & Button
+    // gpio_init(HEARTBEAT_LED);
+    // gpio_set_dir(HEARTBEAT_LED, GPIO_OUT);
+    // gpio_init(BUTTON_PIN);
+    // gpio_set_dir(BUTTON_PIN, GPIO_IN);
+    // gpio_pull_up(BUTTON_PIN); // button reads LOW when pressed
+
+    // // Initialize I2C
     i2c_init(i2c_default, 400000); // 400kHz
     gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
     gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
@@ -33,6 +40,20 @@ int main()
     ssd1306_setup();
 
     while (true) {
+
+        sleep_ms(20);
+
+        // Test Heartbeat LED
+        // if (gpio_get(BUTTON_PIN) == 0) { // button pressed (active low)
+        //     gpio_put(HEARTBEAT_LED, 1);  // hold LED high
+        // } else {
+        //     // blink 3 times per second: on for ~167ms, off for ~167ms
+        //     gpio_put(HEARTBEAT_LED, 1);
+        //     sleep_ms(100);
+        //     gpio_put(HEARTBEAT_LED, 0);
+        //     sleep_ms(100);
+        // }
+
         ssd1306_drawPixel(1,1,1);
         ssd1306_update();
         sleep_ms(20);
