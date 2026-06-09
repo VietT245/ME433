@@ -128,10 +128,14 @@ int main()
     // Initialize MPU6050
     mpu6050_init();
 
-
+    float ax, ay, az, gx, gy, gz, temp;
 
     while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        mpu6050_read(&ax, &ay, &az, &gx, &gy, &gz, &temp);
+
+        // Print to serial monitor at 100Hz
+        printf("Acceleration (g): X=%.4f Y=%.4f  Z=%.4f\n", ax, ay, az);
+        printf("Gyro (dps): X=%.4f  Y=%.4f  Z=%.4f\n", gx, gy, gz);)
+        printf("Temp (C):   %.2f\n\n", temp);
     }
 }
