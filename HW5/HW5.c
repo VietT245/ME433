@@ -84,6 +84,24 @@ void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *
 
     // Burst read 14 bytes starting from ACCEL_XOUT_H
     i2c_read_reg(MPU6050_ADDR, ACCEL_XOUT_H, buf, 14);
+
+    // Combine high and low bytes into signed 16-bit integers
+    int16_t raw_ax = (int16_t)(buf[0] << 8 | buf[1]);
+    int16_t raw_ay   = (int16_t)(buf[2]  << 8 | buf[3]);
+    int16_t raw_az   = (int16_t)(buf[4]  << 8 | buf[5]);
+    int16_t raw_temp = (int16_t)(buf[6]  << 8 | buf[7]);
+    int16_t raw_gx   = (int16_t)(buf[8]  << 8 | buf[9]);
+    int16_t raw_gy   = (int16_t)(buf[10] << 8 | buf[11]);
+    int16_t raw_gz   = (int16_t)(buf[12] << 8 | buf[13]);
+
+    // Convert to physical units
+    *ax   = raw_ax   * 0.000061;   // g
+    *ay   = raw_ay   * 0.000061;   // g
+    *az   = raw_az   * 0.000061;   // g
+    *gx   = raw_gx   * 0.007630;   // degrees per second
+    *gy   = raw_gy   * 0.007630;   // degrees per second
+    *gz   = raw_gz   * 0.007630;   // degrees per second
+    *temp = raw_temp / 340.00 + 36.53; // degrees C
 }
 
 int main()
