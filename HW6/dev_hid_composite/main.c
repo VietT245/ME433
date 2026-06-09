@@ -89,6 +89,7 @@ static float   circle_angle = 0.0f;
  * - 1000 ms : device mounted
  * - 2500 ms : device is suspended
  */
+
 enum  {
   BLINK_NOT_MOUNTED = 250,
   BLINK_MOUNTED = 1000,
@@ -105,6 +106,26 @@ int main(void)
 {
   board_init();
 
+  // Initialize heartbeat LED
+  gpio_init(HEARTBEAT_LED);
+  gpio_set_dir(HEARTBEAT_LED, GPIO_OUT);
+  gpio_put(HEARTBEAT_LED, 0); // off = IMU mode
+
+  // Initialize button
+  gpio_init(BUTTON_PIN);
+  gpio_set_dir(BUTTON_PIN, GPIO_IN);
+  gpio_pull_up(BUTTON_PIN);
+
+  // Initialize I2C
+  i2c_init(i2c_default, 400000);
+  gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
+  gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
+  gpio_pull_up(I2C_SDA);
+  gpio_pull_up(I2C_SCL);
+
+  // Initialize MPU6050
+  mpu6050_init();
+  
   // init device stack on configured roothub port
   tud_init(BOARD_TUD_RHPORT);
 
