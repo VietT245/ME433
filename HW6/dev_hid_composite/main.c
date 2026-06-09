@@ -187,8 +187,29 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
     {
       int8_t dx = 0, dy = 0;
 
-      // no button, right + down, no scroll, no pan
-      tud_hid_mouse_report(REPORT_ID_MOUSE, 0x00, delta, delta, 0, 0);
+      // Check button for mode toggle (active low, edge detect)
+      bool btn_state = gpio_get(BUTTON_PIN);
+      if (!btn_state && last_button) {
+        mode = (mode == MODE_IMU) ? MODE_CIRCLE : MODE_IMU;
+        gpio_put(HEARTBEAT_LED, mode == MODE_CIRCLE ? 1 : 0);
+      }
+      last_button = btn_state;
+
+      if (mode == MODE_IMU) {
+        // IMU mode: tilt controls cursor
+        float ax, ay;
+        mpu6050_read(&ax, &ay);
+        dx = accel_to_delta(ax);
+        dy = accel_to_delta(ay);
+      } else {
+        // Circle mode: slow circle, ~4 second full rotation
+        circle_angle += 0.016f;
+        if (circle_angle > 2.0f * (float)M_PI) circle_angle -= 2.0f * (float)M_PI;
+        dx = (int8_t)(3.0f * cosf(circle_angle));
+        dy = (int8_t)(3.0f * sinf(circle_angle));
+      }
+
+      tud_hid_mouse_report(REPORT_ID_MOUSE, 0x00, dx, dy, 0, 0);
     }
     break;
 
