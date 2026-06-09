@@ -121,7 +121,13 @@ int main()
 {
     stdio_init_all();
 
-    // SPI initialisation. This example will use SPI at 1MHz.
+
+    while (!stdio_usb_connected()){
+        sleep_ms(100);
+    }
+    print("Start\n");
+
+    // Initialize SPI
     spi_init(SPI_PORT, 1000*1000);
     gpio_set_function(PIN_MISO, GPIO_FUNC_SPI);
     gpio_set_function(PIN_CS,   GPIO_FUNC_SIO);
@@ -131,7 +137,8 @@ int main()
     // Chip select is active-low, so we'll initialise it to a driven-high state
     gpio_set_dir(PIN_CS, GPIO_OUT);
     gpio_put(PIN_CS, 1);
-    // For more examples of SPI use see https://github.com/raspberrypi/pico-examples/tree/master/spi
+    gpio_set_dir(PIN_CS_RAM, GPIO_OUT);
+    gpio_put(PIN_CS_RAM, 1);
 
     while (true) {
         printf("Hello, world!\n");
