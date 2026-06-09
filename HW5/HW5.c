@@ -41,6 +41,13 @@
 #define GYRO_ZOUT_L  0x48
 #define WHO_AM_I     0x75
 
+// Function prototypes
+void drawMessage(int x, int y, char * m); // Character array m for message
+void drawLetter(int x, int y, char c);
+void mpu6050_init();
+void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *gz, float *temp);
+
+
 int main()
 {
     stdio_init_all();
