@@ -79,6 +79,13 @@ void mpu6050_init(){
     i2c_write_reg(MPU6050_ADDR, GYRO_CONFIG, 0x18)
 }
 
+void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *gz, float *temp){
+    uint buf[14];
+
+    // Burst read 14 bytes starting from ACCEL_XOUT_H
+    i2c_read_reg(MPU6050_ADDR, ACCEL_XOUT_H, buf, 14);
+}
+
 int main()
 {
     stdio_init_all();
