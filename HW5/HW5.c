@@ -104,6 +104,19 @@ void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *
     *temp = raw_temp / 340.00 + 36.53; // degrees C
 }
 
+void drawLine(int x0, int y0, int x1, int y1, unsigned char color) {
+    int dx = abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
+    int dy = -abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
+    int err = dx + dy;
+    while (1) {
+        ssd1306_drawPixel(x0, y0, color);
+        if (x0 == x1 && y0 == y1) break;
+        int e2 = 2 * err;
+        if (e2 >= dy) { err += dy; x0 += sx; }
+        if (e2 <= dx) { err += dx; y0 += sy; }
+    }
+}
+
 int main()
 {
     stdio_init_all();
@@ -128,28 +141,39 @@ int main()
     // Initialize MPU6050
     mpu6050_init();
 
+    // Display center
+    const int cx = 64; // 128/2
+    const int cy = 16; // 32/2
+    const float scale = 15.0; // max line length in pixels (at 1g)
+
     float ax, ay, az, gx, gy, gz, temp;
 
     while (true) {
         mpu6050_read(&ax, &ay, &az, &gx, &gy, &gz, &temp);
 
-        // Print to serial monitor at 100Hz
-        printf("Acceleration (g): X=%.4f Y=%.4f  Z=%.4f\n", ax, ay, az);
-        printf("Gyro (dps): X=%.4f  Y=%.4f  Z=%.4f\n", gx, gy, gz);)
-        printf("Temp (C):   %.2f\n\n", temp);
+        // Scale acceleration to pixel length (clamped to screen bounds)
+        int ex = cx + (int)(ax * scale);
+        int ey = cy + (int)(ay * scale);
 
-        // Display on OLED
+        // Clamp to display bounds
+        if (ex < 0)   ex = 0;
+        if (ex > 127) ex = 127;
+        if (ey < 0)   ey = 0;
+        if (ey > 31)  ey = 31;
+
         ssd1306_clear();
-        char message[30];
-        sprintf(message, "AX:%.2f AY:%.2f", ax, ay);
-        drawMessage(0, 0, message);
-        sprintf(message, "AZ:%.2f T:%.1f", az, temp);
-        drawMessage(0, 10, message);
-        sprintf(message, "GX:%.1f GY:%.1f", gx, gy);
-        drawMessage(0, 20, message);
-        ssd1306_update();
 
-        sleep_ms(10); // 100Hz
+        // Draw crosshair at center
+        ssd1306_drawPixel(cx,     cy,     1);
+        ssd1306_drawPixel(cx + 1, cy,     1);
+        ssd1306_drawPixel(cx - 1, cy,     1);
+        ssd1306_drawPixel(cx,     cy + 1, 1);
+        ssd1306_drawPixel(cx,     cy - 1, 1);
+
+        // Draw line from center to scaled acceleration endpoint
+        drawLine(cx, cy, ex, ey, 1);
+
+        ssd1306_update();
     }
 }
 
