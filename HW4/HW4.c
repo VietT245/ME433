@@ -18,6 +18,8 @@
 #define HEARTBEAT_LED 7
 #define BUTTON_PIN 0
 
+
+
 int main()
 {
     stdio_init_all();
@@ -82,6 +84,10 @@ int main()
         // ssd1306_update();
         // sleep_ms(20);
         }
-        
+        char message[50];
+        sprintf(message, "Hello there!");
+        drawMessage(10,20,message);
+        ssd1306_update();
+        sleep_ms(1000);
     }
 }
