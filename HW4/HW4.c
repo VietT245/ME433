@@ -47,8 +47,13 @@ int main()
     adc_select_input(0);
 
     while (true) {
-
         sleep_ms(20);
+        int i = 1;
+        while (1){
+            float time = to_us_since_boot(get_absolute_time()) / 1000000.0;
+            float fps = i / time;
+            float voltage = (adc_read() / 4096.0) * 3.3;
+            char message[30];
 
         // Test Heartbeat LED
         // if (gpio_get(BUTTON_PIN) == 0) { // button pressed (active low)
@@ -61,11 +66,14 @@ int main()
         //     sleep_ms(100);
         // }
 
-        ssd1306_drawPixel(1,1,1);
-        ssd1306_update();
-        sleep_ms(20);
-        ssd1306_drawPixel(1,1,0);
-        ssd1306_update();
-        sleep_ms(20);
+        // Test ssd1306
+        // ssd1306_drawPixel(1,1,1);
+        // ssd1306_update();
+        // sleep_ms(20);
+        // ssd1306_drawPixel(1,1,0);
+        // ssd1306_update();
+        // sleep_ms(20);
+        }
+
     }
 }
