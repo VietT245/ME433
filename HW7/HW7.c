@@ -9,6 +9,10 @@
 #define PIN_SCK  18 // SCK Pin
 #define PIN_MOSI 19 // TX Pin
 
+// Initialize Triange and Sine Wave
+static float triangle_wave[100];
+static float sine_wave[100];
+
 static inline void cs_select(uint cs_pin) {
     asm volatile("nop \n nop \n nop"); // FIXME
     gpio_put(cs_pin, 0);
@@ -68,6 +72,8 @@ void makeSine() {
 int main()
 {
     stdio_init_all();
+    makeTriangle();
+    makeSine();
 
     // SPI initialisation. This example will use SPI at 1MHz.
     spi_init(SPI_PORT, 1000*1000);
@@ -80,16 +86,13 @@ int main()
     gpio_set_dir(PIN_CS, GPIO_OUT);
     gpio_put(PIN_CS, 1);
 
-    cs_select(PIN_CS);
-    spi_write_blocking(SPI_PORT, data, len); // where data is a uint8_t array with length len
-    cs_deselect(PIN_CS);
-
     while (true) {
         // Call function writeDac
-        float t = 0;
-        t = t + 0.1;
-        float voltage = (sine(2*pi*f*t)+1) / 2 * 3.3;
-        wrideDac(channel, voltage); // Update voltage 100 times per second
-        sleep_ms(10);
+        for (int i = 0; i < 100; i++){ // One loop per second
+            writeDAC(0,sine_wave[i]); // Writes the sine wave
+            printf("Sine Value at %d: %.3f\r\n",i,sine_wave[i]); //debugging
+            writeDAC(1,triangle_wave[i]); // Writes the triangle wave 
+            printf("Triangle Value at %d: %.3f\r\n",i,triangle_wave[i]); // debugging
+            sleep_ms(10);
     }
 }
