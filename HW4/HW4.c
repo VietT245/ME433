@@ -2,6 +2,8 @@
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 #include "ssd1306.h"
+#include "hardware/adc.h"
+#include "font.h"
 
 // I2C settings
 #define I2C_PORT i2c0
@@ -94,11 +96,20 @@ int main()
     }
 }
 
-void drawMessage(int x, int y, char * m){
+void drawMessage(int x, int y, char * m){ // Where m is an array of characters in message
     int i = 0;
-    while (m[i] != 0){
-        drawLetter(x + (i * 6), y, m[i]);
+    while (m[i] != 0){ // Detects a "null character = 0" at the end of sprintf
+        drawLetter(x + (i * 5), y, m[i]); // Draw letter with separation between characters
         i++;
     }
 }
 
+void drawLetter(int x, int y, char c){ 
+    for (int j=0; j<5; j++){ // Iterates through columns left to right
+        char col = ASCII[c-0x20] [j]; // Starting at 0x20 for ASCII table
+        for (int i=0; i<8; i++){ // Iterates through rows top to bottom
+            char bit = (col >> i) & 0b1; // Right shift and & each bit to check if it's a 1
+            ssd1306_drawPixel(x+j, y+1, bit); // Add the bit to draw pixel
+        }
+    }
+}
