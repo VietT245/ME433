@@ -18,7 +18,9 @@
 #define HEARTBEAT_LED 7
 #define BUTTON_PIN 0
 
-
+// Initializing funcs
+void drawMessage(int x, int y, char * m);
+void drawLetter(int x, int y, char c);
 
 int main()
 {
@@ -91,3 +93,12 @@ int main()
         sleep_ms(1000);
     }
 }
+
+void drawMessage(int x, int y, char * m){
+    int i = 0;
+    while (m[i] != 0){
+        drawLetter(x + (i * 6), y, m[i]);
+        i++;
+    }
+}
+
