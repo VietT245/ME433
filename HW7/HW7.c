@@ -45,7 +45,6 @@ void writeDAC(int channel, float voltage) {
 }
 
 void makeTriangle(){
-    int i = 1;
     triangle_wave[0] = 1.65;
     for (int i = 1; i < 100; i++)
     {
@@ -65,7 +64,7 @@ void makeSine() {
     float radian = 0;
     for (int i=0;i<100;i++){
         sine_wave[i] = 1.65 * sin(radian) + 1.65; // Centers the sine wave on 1.65 with amplitude 1.65, making it always positive
-        radian += (2*3.14159265359) / 100; // Makes two periods in one cycle
+        radian += (2 * 3.14159265359 * 2) / 100; // Makes two periods in one cycle
     }
 }
 
@@ -94,5 +93,6 @@ int main()
             writeDAC(1,triangle_wave[i]); // Writes the triangle wave 
             printf("Triangle Value at %d: %.3f\r\n",i,triangle_wave[i]); // debugging
             sleep_ms(10);
+        }
     }
 }
