@@ -37,6 +37,28 @@
 #include "hardware/i2c.h"
 #include "hardware/gpio.h"
 
+// I2C settings
+#define I2C_SDA 4
+#define I2C_SCL 5
+
+// Heartbeat LED
+#define HEARTBEAT_LED 7
+#define BUTTON_PIN 0
+
+// MPU6050
+#define MPU6050_ADDR  0x68
+#define CONFIG        0x1A
+#define GYRO_CONFIG   0x1B
+#define ACCEL_CONFIG  0x1C
+#define PWR_MGMT_1    0x6B
+#define WHO_AM_I      0x75
+#define ACCEL_XOUT_H  0x3B
+
+// Modes
+#define MODE_IMU    0
+#define MODE_CIRCLE 1
+
+
 //--------------------------------------------------------------------+
 // MACRO CONSTANT TYPEDEF PROTYPES
 //--------------------------------------------------------------------+
