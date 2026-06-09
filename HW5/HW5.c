@@ -50,7 +50,7 @@ void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *
 // Writing 1 byte to a register on the MPU6050
 void i2c_write_reg(uint8_t addr, uint8_t reg, uint8_t data){
     uint8_t buf[2] = {reg, data};
-    i2c_write_blocking(i2c_defulat, addr, buf, 2, false);
+    i2c_write_blocking(i2c_default, addr, buf, 2, false);
 }
 
 // Read n bytes starting from a register on the MPU6050
@@ -76,11 +76,11 @@ void mpu6050_init(){
     i2c_write_reg(MPU6050_ADDR, ACCEL_CONFIG, 0x00);
 
     // Set gyroscope sensitivity to +- 2000 dps (bits [4:3] = 11)
-    i2c_write_reg(MPU6050_ADDR, GYRO_CONFIG, 0x18)
+    i2c_write_reg(MPU6050_ADDR, GYRO_CONFIG, 0x18);
 }
 
 void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *gz, float *temp){
-    uint buf[14];
+    uint8_t buf[14];
 
     // Burst read 14 bytes starting from ACCEL_XOUT_H
     i2c_read_reg(MPU6050_ADDR, ACCEL_XOUT_H, buf, 14);
