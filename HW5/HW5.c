@@ -137,5 +137,18 @@ int main()
         printf("Acceleration (g): X=%.4f Y=%.4f  Z=%.4f\n", ax, ay, az);
         printf("Gyro (dps): X=%.4f  Y=%.4f  Z=%.4f\n", gx, gy, gz);)
         printf("Temp (C):   %.2f\n\n", temp);
+
+        // Display on OLED
+        ssd1306_clear();
+        char message[30];
+        sprintf(message, "AX:%.2f AY:%.2f", ax, ay);
+        drawMessage(0, 0, message);
+        sprintf(message, "AZ:%.2f T:%.1f", az, temp);
+        drawMessage(0, 10, message);
+        sprintf(message, "GX:%.1f GY:%.1f", gx, gy);
+        drawMessage(0, 20, message);
+        ssd1306_update();
+
+        sleep_ms(10); // 100Hz
     }
 }
