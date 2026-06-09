@@ -30,12 +30,8 @@ static inline void cs_deselect(uint cs_pin) {
 // Prototypes
 void writeDac(int channel, float voltage);
 void spi_ram_init();
-void spi_ram_write(uint16_t address, float v);
-float spi_ram_read(uint16_t address);
-union FloatInt {
-    float f;
-    uint32_t i;
-};
+void spi_ram_write(uint16_t address, uint16_t val);
+uint16_t spi_ram_read(uint16_t address);
 
 void spi_ram_init(){ // Sets the mode as sequential
     uint8_t buf[2];
@@ -135,25 +131,18 @@ int main()
     printf("Initialized RAM\n");
 
     makeSine();
-    printf("Initialized Sine wave");
-
-    // Write sine wave to RAM
-    for (int i=0;i<1000;i++){
-        uint16_t addr = 2*i;
-        spi_ram_write(addr, sine_wave[i]);
-        printf("Writing sine wave %.4f\n", sine_wave[i]);
+    for (int i = 0; i < 1000; i++) {
+        spi_ram_write(2 * i, sine_wave_dac[i]);
     }
-
-    printf("Sine wave sent to RAM");
+    printf("Sine wave written to RAM\n");
 
     while (true) {
-        for (int i = 0; i< 1000; i++) {
-            uint16_t address = 2*i;
-            // printf("Address: %d\r\n",address);
-            read_sine_wave[i] = spi_ram_read(address);
-            // printf("Original sine wave: %.4f\r\n Read sine wave: %.4f\n", sine_wave[i], read_sine_wave[i]);
-            writeDAC(0, read_sine_wave[i]);
-            writeDAC(1, sine_wave[i]);
+        for (int i = 0; i < 1000; i++) {
+            uint16_t dac_val = spi_ram_read(2 * i);
+            uint8_t data[2] = { (dac_val >> 8) & 0xFF, dac_val & 0xFF };
+            cs_select(PIN_CS);
+            spi_write_blocking(SPI_PORT, data, 2);
+            cs_deselect(PIN_CS);
             sleep_ms(1);
         }
     }
