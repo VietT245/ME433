@@ -212,7 +212,7 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
       tud_hid_mouse_report(REPORT_ID_MOUSE, 0x00, dx, dy, 0, 0);
     }
     break;
-    
+
     default: break;
   }
 }
