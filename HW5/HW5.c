@@ -152,3 +152,21 @@ int main()
         sleep_ms(10); // 100Hz
     }
 }
+
+void drawMessage(int x, int y, char * m) {
+    int i = 0;
+    while (m[i] != 0) {
+        drawLetter(x + (i * 5), y, m[i]);
+        i++;
+    }
+}
+
+void drawLetter(int x, int y, char c) {
+    for (int j = 0; j < 5; j++) {
+        char col = ASCII[c - 0x20][j];
+        for (int i = 0; i < 8; i++) {
+            char bit = (col >> i) & 0b1;
+            ssd1306_drawPixel(x + j, y + i, bit);
+        }
+    }
+}
