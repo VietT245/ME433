@@ -108,6 +108,10 @@ int main()
 {
     stdio_init_all();
 
+    // Initialize heartbeat LED
+    gpio_init(HEARTBEAT_LED);
+    gpio_set_dir(HEARTBEAT_LED, GPIO_OUT);
+    
     // I2C Initialisation. Using it at 400Khz.
     i2c_init(I2C_PORT, 400*1000);
     
@@ -115,6 +119,15 @@ int main()
     gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
     gpio_pull_up(I2C_SDA);
     gpio_pull_up(I2C_SCL);
+
+    // Initialize display
+    ssd1306_setup();
+    ssd1306_clear();
+    ssd1306_update();
+
+    // Initialize MPU6050
+    mpu6050_init();
+
 
 
     while (true) {
