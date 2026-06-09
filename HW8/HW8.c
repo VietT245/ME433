@@ -10,8 +10,112 @@
 #define PIN_CS   17
 #define PIN_SCK  18
 #define PIN_MOSI 19
+#define PIN_CS_RAM 13
 
+static float sine_wave[1000];
+static float radian = 0;
+static float read_sine_wave[1000];
 
+static inline void cs_select(uint cs_pin) {
+    asm volatile("nop \n nop \n nop"); // FIXME
+    gpio_put(cs_pin, 0);
+    asm volatile("nop \n nop \n nop"); // FIXME
+}
+
+static inline void cs_deselect(uint cs_pin) {
+    asm volatile("nop \n nop \n nop"); // FIXME
+    gpio_put(cs_pin, 1);
+    asm volatile("nop \n nop \n nop"); // FIXME
+}
+
+// Prototypes
+void writeDac(int channel, float voltage);
+void spi_ram_init();
+void spi_ram_write(uint16_t address, float v);
+float spi_ram_read(uint16_t address);
+union FloatInt {
+    float f;
+    uint32_t i;
+};
+
+void spi_ram_init(){ // Sets the mode as sequential
+    uint8_t buf[2];
+    buf[0] = 0b00000001;
+    buf[1] = 0b01000000;
+
+    cs_select(PIN_CS_RAM);
+    spi_write_blocking(SPI_PORT, buf, 2 );
+    cs_deselect(PIN_CS_RAM);
+}
+
+void spi_ram_write(uint16_t address, float v){
+    uint8_t write_init[3], write_data[4];
+    write_init[0] = 0b00000010;
+    write_init[1] = ((address >> 8) & 0b11111111);
+    write_init[2] = (address & 0b11111111);
+
+    union FloatInt num;
+    num.f = v;
+
+    write_data[0] = ((num.i >> 24) & 0b11111111);
+    write_data[1] = ((num.i >> 16) & 0b11111111);
+    write_data[2] = ((num.i >> 8) & 0b11111111);
+    write_data[3] = (num.i & 0b11111111);
+
+    cs_select(PIN_CS_RAM);
+    spi_write_blocking(SPI_PORT, write_init, 3);
+    spi_write_blocking(SPI_PORT,write_data,4);
+    cs_deselect(PIN_CS_RAM);
+}
+
+float spi_ram_read(uint16_t address) {
+    uint8_t write[3], read[4];
+    write[0] = 0b00000011;
+    write[1] = ((address >> 8) & 0b11111111);
+    write[2] = (address & 0b11111111);
+
+    
+    cs_select(PIN_CS_RAM);
+    spi_write_blocking(SPI_PORT, write, 3);
+    spi_read_blocking(SPI_PORT, 0, read, 4);
+    cs_deselect(PIN_CS_RAM);
+
+    union FloatInt num;
+    num.i = 0;
+    num.i |= (read[0] << 24);
+    num.i |= (read[1] << 16);
+    num.i |= (read[2] << 8);
+    num.i |= (read[3]);
+
+    return num.f;
+}
+
+// channel: 0 = channel A, 1 = channel B
+// voltage: 0.0 to 3.3
+void writeDAC(int channel, float voltage) {
+    // Clamp voltage to valid range
+    if (voltage < 0.0f)  voltage = 0.0f;
+    if (voltage > 3.3f)  voltage = 3.3f;
+
+    uint16_t voltage_bits = (uint16_t) ((voltage/3.3) * 1023.0); // Voltage between 0 and 1023
+    uint8_t data[2] ;
+    int len = 2;
+
+    data[0] = ((channel & 0x01) << 7) | (0b111 << 4) | ((voltage_bits >> 6) & 0x0F);
+    data[1] = ((voltage_bits & 0x3F) << 2);
+    
+    cs_select(PIN_CS);
+    spi_write_blocking(SPI_PORT, data, len);
+    cs_deselect(PIN_CS);
+}
+
+void makeSine() {
+    float radian = 0;
+    for (int i=0;i<100;i++){
+        sine_wave[i] = 1.65 * sin(radian) + 1.65; // Centers the sine wave on 1.65 with amplitude 1.65, making it always positive
+        radian += (2 * 3.14159265359 * 2) / 100; // Makes two periods in one cycle
+    }
+}
 
 int main()
 {
