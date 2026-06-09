@@ -53,9 +53,9 @@ int main()
     adc_select_input(0);
 
     while (true) {
-        sleep_ms(20);
         int i = 1;
         while (1){
+            ssd1306_clear();
             float time = to_us_since_boot(get_absolute_time()) / 1000000.0;
             float fps = i / time;
             float voltage = (adc_read() / 4096.0) * 3.3;
@@ -109,7 +109,7 @@ void drawLetter(int x, int y, char c){
         char col = ASCII[c-0x20] [j]; // Starting at 0x20 for ASCII table
         for (int i=0; i<8; i++){ // Iterates through rows top to bottom
             char bit = (col >> i) & 0b1; // Right shift and & each bit to check if it's a 1
-            ssd1306_drawPixel(x+j, y+1, bit); // Add the bit to draw pixel
+            ssd1306_drawPixel(x+j, y+i, bit); // Add the bit to draw pixel
         }
     }
 }
