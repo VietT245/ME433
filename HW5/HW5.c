@@ -59,6 +59,26 @@ void i2c_read_reg(uint8_t addr, uint8_t reg, uint8_t *buf, uint8_t len){
     i2c_read_blocking(i2c_default, addr, buf, len, false);
 }
 
+void mpu6050_init(){
+    // Check WHO_AM_I
+    uint8_t who;
+    i2c_read_reg(MPU6050_ADDR, WHO_AM_I, &who, 1);
+    if (who != 0x68 && who != 0x98){
+        // Wrong value -> turn on LED and hang
+        gpio_put(HEARTBEAT_LED, 1);
+        while (1) {tight_loop_contents(); }
+    }
+
+    // Wake up chip by writing 0x00 to PWER_MGMT 1
+    i2c_write_reg(MPU6050_ADDR, PWR_MGMT_1, 0x00);
+
+    // Set accelerometer sensitivty to +- 2g (bits [4:3] = 00)
+    i2c_write_reg(MPU6050_ADDR, ACCEL_CONFIG, 0x00);
+
+    // Set gyroscope sensitivity to +- 2000 dps (bits [4:3] = 11)
+    i2c_write_reg(MPU6050_ADDR, GYRO_CONFIG, 0x18)
+}
+
 int main()
 {
     stdio_init_all();
