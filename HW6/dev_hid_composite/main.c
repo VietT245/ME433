@@ -58,6 +58,38 @@
 #define MODE_IMU    0
 #define MODE_CIRCLE 1
 
+// MPU6050 Helpers
+void i2c_write_reg(uint8_t addr, uint8_t reg, uint8_t data) {
+    uint8_t buf[2] = {reg, data};
+    i2c_write_blocking(i2c_default, addr, buf, 2, false);
+}
+
+void i2c_read_reg(uint8_t addr, uint8_t reg, uint8_t *buf, uint8_t len) {
+    i2c_write_blocking(i2c_default, addr, &reg, 1, true);
+    i2c_read_blocking(i2c_default, addr, buf, len, false);
+}
+
+void mpu6050_init() {
+    uint8_t who;
+    i2c_read_reg(MPU6050_ADDR, WHO_AM_I, &who, 1);
+    if (who != 0x68 && who != 0x98) {
+        gpio_put(HEARTBEAT_LED, 1);
+        while (1) { tight_loop_contents(); }
+    }
+    i2c_write_reg(MPU6050_ADDR, PWR_MGMT_1,  0x00);
+    i2c_write_reg(MPU6050_ADDR, ACCEL_CONFIG, 0x00); // +/- 2g
+    i2c_write_reg(MPU6050_ADDR, GYRO_CONFIG,  0x18); // +/- 2000 dps
+}
+
+void mpu6050_read(float *ax, float *ay) {
+    uint8_t buf[4];
+    i2c_read_reg(MPU6050_ADDR, ACCEL_XOUT_H, buf, 4); // just X and Y accel
+    int16_t raw_ax = (int16_t)(buf[0] << 8 | buf[1]);
+    int16_t raw_ay = (int16_t)(buf[2] << 8 | buf[3]);
+    *ax = raw_ax * 0.000061f; // g
+    *ay = raw_ay * 0.000061f; // g
+}
+
 
 //--------------------------------------------------------------------+
 // MACRO CONSTANT TYPEDEF PROTYPES
