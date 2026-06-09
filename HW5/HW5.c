@@ -53,6 +53,12 @@ void i2c_write_reg(uint8_t addr, uint8_t reg, uint8_t data){
     i2c_write_blocking(i2c_defulat, addr, buf, 2, false);
 }
 
+// Read n bytes starting from a register on the MPU6050
+void i2c_read_reg(uint8_t addr, uint8_t reg, uint8_t *buf, uint8_t len){
+    i2c_write_blocking(i2c_default, addr, &reg, 1, true); // true means keep bus active
+    i2c_read_blocking(i2c_default, addr, buf, len, false);
+}
+
 int main()
 {
     stdio_init_all();
