@@ -40,7 +40,30 @@ void writeDAC(int channel, float voltage) {
     cs_deselect(PIN_CS);
 }
 
+void makeTriangle(){
+    int i = 1;
+    triangle_wave[0] = 1.65;
+    for (int i = 1; i < 100; i++)
+    {
+        if (i < 25) {
+            triangle_wave[i] = triangle_wave[i-1] + (1.65/25);
+        }
+        else if (i > 24 && i < 75) {
+            triangle_wave[i] = triangle_wave[i-1] - (3.3/50);
+        }
+        else if (i > 74 && i < 100) {
+            triangle_wave[i] = triangle_wave[i-1] + (1.65/25);
+        }
+    }
+}
 
+void makeSine() {
+    float radian = 0;
+    for (int i=0;i<100;i++){
+        sine_wave[i] = 1.65 * sin(radian) + 1.65; // Centers the sine wave on 1.65 with amplitude 1.65, making it always positive
+        radian += (2*3.14159265359) / 100; // Makes two periods in one cycle
+    }
+}
 
 int main()
 {
