@@ -55,6 +55,14 @@ int main()
             float voltage = (adc_read() / 4096.0) * 3.3;
             char message[30];
 
+            sprintf(message, "Voltage = %f", voltage);
+            drawMessage(5,5,message);
+
+            sprintf(message, "fps = %f", fps);
+            drawMessage(5,20,message);
+            ssd1306_update();
+
+            i++;
         // Test Heartbeat LED
         // if (gpio_get(BUTTON_PIN) == 0) { // button pressed (active low)
         //     gpio_put(HEARTBEAT_LED, 1);  // hold LED high
@@ -74,6 +82,6 @@ int main()
         // ssd1306_update();
         // sleep_ms(20);
         }
-
+        
     }
 }
