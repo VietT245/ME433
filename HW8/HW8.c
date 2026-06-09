@@ -140,8 +140,31 @@ int main()
     gpio_set_dir(PIN_CS_RAM, GPIO_OUT);
     gpio_put(PIN_CS_RAM, 1);
 
+    // Initialize RAM
+    spi_ram_init();
+    printf("Initialized RAM\n");
+
+    makeSine();
+    printf("Initialized Sine wave");
+
+    // Write sine wave to RAM
+    for (int i=0;i<1000;i++){
+        uint16_t addr = 4*i;
+        spi_ram_write(addr, sine_wave[i]);
+        printf("Writing sine wave %.4f\n", sine_wave[i]);
+    }
+
+    printf("Sine wave sent to RAM");
+
     while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        for (int i = 0; i< 1000; i++) {
+            uint16_t address = 4*i;
+            printf("Address: %d\r\n",address);
+            read_sine_wave[i] = spi_ram_read(address);
+            printf("Original sine wave: %.4f\r\n Read sine wave: %.4f\n", sine_wave[i], read_sine_wave[i]);
+            writeDAC(0, read_sine_wave[i]);
+            writeDAC(1, sine_wave[i]);
+            sleep_ms(1);
+        }
     }
 }
