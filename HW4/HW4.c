@@ -38,6 +38,8 @@ int main()
 
     // Initialize the display
     ssd1306_setup();
+    ssd1306_clear();
+    ssd1306_update(); // Clear Screen
 
     while (true) {
 
