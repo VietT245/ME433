@@ -47,6 +47,11 @@ void drawLetter(int x, int y, char c);
 void mpu6050_init();
 void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *gz, float *temp);
 
+// Writing 1 byte to a register on the MPU6050
+void i2c_write_reg(uint8_t addr, uint8_t reg, uint8_t data){
+    uint8_t buf[2] = {reg, data};
+    i2c_write_blocking(i2c_defulat, addr, buf, 2, false);
+}
 
 int main()
 {
