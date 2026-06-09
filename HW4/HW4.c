@@ -41,6 +41,11 @@ int main()
     ssd1306_clear();
     ssd1306_update(); // Clear Screen
 
+    // Initialize ADC0
+    adc_init();
+    adc_gpio_init(26);
+    adc_select_input(0);
+
     while (true) {
 
         sleep_ms(20);
