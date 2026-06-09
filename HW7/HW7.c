@@ -21,6 +21,27 @@ static inline void cs_deselect(uint cs_pin) {
     asm volatile("nop \n nop \n nop"); // FIXME
 }
 
+// channel: 0 = channel A, 1 = channel B
+// voltage: 0.0 to 3.3
+void writeDAC(int channel, float voltage) {
+    // Clamp voltage to valid range
+    if (voltage < 0.0f)  voltage = 0.0f;
+    if (voltage > 3.3f)  voltage = 3.3f;
+
+    uint16_t voltage_bits = (uint16_t) ((voltage/3.3) * 1023.0); // Voltage between 0 and 1023
+    uint8_t data[2] ;
+    int len = 2;
+
+    data[0] = ((channel & 0x01) << 7) | (0b111 << 4) | ((voltage_bits >> 6) & 0x0F);
+    data[1] = ((voltage_bits & 0x3F) << 2);
+    
+    cs_select(PIN_CS);
+    spi_write_blocking(SPI_PORT, data, len);
+    cs_deselect(PIN_CS);
+}
+
+
+
 int main()
 {
     stdio_init_all();
@@ -42,8 +63,10 @@ int main()
 
     while (true) {
         // Call function writeDac
-        float voltage = sine(t)
-        wrideDac(channel, voltage) // Update voltage 100 times per second
+        float t = 0;
+        t = t + 0.1;
+        float voltage = (sine(2*pi*f*t)+1) / 2 * 3.3;
+        wrideDac(channel, voltage); // Update voltage 100 times per second
         sleep_ms(10);
     }
 }
