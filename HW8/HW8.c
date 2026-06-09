@@ -69,7 +69,7 @@ void spi_ram_write(uint16_t address, float v){
 }
 
 float spi_ram_read(uint16_t address) {
-    uint8_t write[3], read[4];
+    uint16_t write[3], read[4];
     write[0] = 0b00000011;
     write[1] = ((address >> 8) & 0b11111111);
     write[2] = (address & 0b11111111);
@@ -111,9 +111,9 @@ void writeDAC(int channel, float voltage) {
 
 void makeSine() {
     float radian = 0;
-    for (int i=0;i<100;i++){
+    for (int i=0;i<1000;i++){
         sine_wave[i] = 1.65 * sin(radian) + 1.65; // Centers the sine wave on 1.65 with amplitude 1.65, making it always positive
-        radian += (2 * 3.14159265359 * 2) / 100; // Makes two periods in one cycle
+        radian += (2 * 3.14159265359) / 1000; // Makes one cycle over 1000 steps
     }
 }
 
@@ -125,7 +125,7 @@ int main()
     while (!stdio_usb_connected()){
         sleep_ms(100);
     }
-    print("Start\n");
+    printf("Start\n");
 
     // Initialize SPI
     spi_init(SPI_PORT, 1000*1000);
@@ -149,7 +149,7 @@ int main()
 
     // Write sine wave to RAM
     for (int i=0;i<1000;i++){
-        uint16_t addr = 4*i;
+        uint16_t addr = 2*i;
         spi_ram_write(addr, sine_wave[i]);
         printf("Writing sine wave %.4f\n", sine_wave[i]);
     }
@@ -158,10 +158,10 @@ int main()
 
     while (true) {
         for (int i = 0; i< 1000; i++) {
-            uint16_t address = 4*i;
-            printf("Address: %d\r\n",address);
+            uint16_t address = 2*i;
+            // printf("Address: %d\r\n",address);
             read_sine_wave[i] = spi_ram_read(address);
-            printf("Original sine wave: %.4f\r\n Read sine wave: %.4f\n", sine_wave[i], read_sine_wave[i]);
+            // printf("Original sine wave: %.4f\r\n Read sine wave: %.4f\n", sine_wave[i], read_sine_wave[i]);
             writeDAC(0, read_sine_wave[i]);
             writeDAC(1, sine_wave[i]);
             sleep_ms(1);
