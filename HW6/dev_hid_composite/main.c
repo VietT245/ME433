@@ -199,7 +199,7 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
         // IMU mode: tilt controls cursor
         float ax, ay;
         mpu6050_read(&ax, &ay);
-        dx = accel_to_delta(ax);
+        dx = -accel_to_delta(ax);
         dy = accel_to_delta(ay);
       } else {
         // Circle mode: slow circle, ~4 second full rotation
