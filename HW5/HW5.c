@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 #include "ssd1306.h"
@@ -50,13 +51,13 @@ void mpu6050_read(float *ax, float *ay, float *az, float *gx, float *gy, float *
 // Writing 1 byte to a register on the MPU6050
 void i2c_write_reg(uint8_t addr, uint8_t reg, uint8_t data){
     uint8_t buf[2] = {reg, data};
-    i2c_write_blocking(i2c_default, addr, buf, 2, false);
+    i2c_write_blocking(I2C_PORT, addr, buf, 2, false);
 }
 
 // Read n bytes starting from a register on the MPU6050
 void i2c_read_reg(uint8_t addr, uint8_t reg, uint8_t *buf, uint8_t len){
-    i2c_write_blocking(i2c_default, addr, &reg, 1, true); // true means keep bus active
-    i2c_read_blocking(i2c_default, addr, buf, len, false);
+    i2c_write_blocking(I2C_PORT, addr, &reg, 1, true); // true means keep bus active
+    i2c_read_blocking(I2C_PORT, addr, buf, len, false);
 }
 
 void mpu6050_init(){
