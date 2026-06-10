@@ -153,7 +153,7 @@ int main()
         mpu6050_read(&ax, &ay, &az, &gx, &gy, &gz, &temp);
 
         // Scale acceleration to pixel length (clamped to screen bounds)
-        int ex = cx + (int)(ax * scale);
+        int ex = cx - (int)(ax * scale);
         int ey = cy + (int)(ay * scale);
 
         // Clamp to display bounds
