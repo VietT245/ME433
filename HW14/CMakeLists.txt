@@ -42,11 +42,12 @@ pico_set_program_version(HW14 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(HW14 0)
-pico_enable_stdio_usb(HW14 0)
+pico_enable_stdio_usb(HW14 1)
 
 # Add the standard library to the build
 target_link_libraries(HW14
-        pico_stdlib)
+        pico_stdlib
+        hardware_gpio)
 
 # Add the standard include files to the build
 target_include_directories(HW14 PRIVATE
