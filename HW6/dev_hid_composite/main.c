@@ -69,9 +69,9 @@ void mpu6050_read(float *ax, float *ay) {
 int8_t accel_to_delta(float a) {
     float abs_a = fabsf(a);
     int sign    = a >= 0 ? 1 : -1;
-    if      (abs_a > 0.5f) return sign * 5;
-    else if (abs_a > 0.3f) return sign * 3;
-    else if (abs_a > 0.1f) return sign * 1;
+    if      (abs_a > 0.5f) return sign * 10;
+    else if (abs_a > 0.3f) return sign * 5;
+    else if (abs_a > 0.1f) return sign * 2;
     else                   return 0;
 }
 
