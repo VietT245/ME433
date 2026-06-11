@@ -1,23 +1,3 @@
-/**
- * mpu6050_controller.c
- * Raspberry Pi Pico – MPU-6050 breadboard game controller
- *
- * Reads accelerometer data from the MPU-6050 and streams it over USB-CDC
- * as a compact CSV line at ~50 Hz so the Python/pgzero game can use it.
- *
- * Serial protocol (host ← Pico):
- *   A,<ax>,<ay>,<az>,<btn>\n
- *   ax/ay/az = raw 16-bit signed accel values (-32768..32767)
- *   btn      = 0 or 1 (GP0, active low with internal pull-up)
- *
- * Pins:
- *   GP4  = I2C SDA
- *   GP5  = I2C SCL
- *   GP7  = Heartbeat LED
- *   GP0  = Button (active-low, internal pull-up)
- *   MPU-6050 I2C address = 0x68 (AD0 tied low)
- */
-
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"

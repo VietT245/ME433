@@ -285,7 +285,7 @@ def update(dt):
         return
 
     tilt_fwd   = -norm_tilt(ay)   # forward = tilt board away from you (−Y)
-    tilt_steer =  norm_tilt(ax)   # right   = tilt board right (+X)
+    tilt_steer =  -norm_tilt(ax)   # right   = tilt board right (+X)
 
     # Steering changes heading
     state.angle += tilt_steer * STEER_SPEED * dt
