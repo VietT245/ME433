@@ -124,7 +124,7 @@ int main(void)
     /* USER CODE END WHILE */
 	  if (HAL_UART_Receive(&huart1, &c, 1, 10) == HAL_OK)
 	  {
-		  printf("%c", c);
+		  print("%c", c);
 	  }
     /* USER CODE BEGIN 3 */
   }

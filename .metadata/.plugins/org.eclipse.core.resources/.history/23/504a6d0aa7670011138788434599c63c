@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
+#include "string.h"
 
 /* USER CODE END Includes */
 
@@ -115,17 +115,13 @@ int main(void)
     Error_Handler();
   }
 
-  uint8_t c;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 
     /* USER CODE END WHILE */
-	  if (HAL_UART_Receive(&huart1, &c, 1, 10) == HAL_OK)
-	  {
-		  printf("%c", c);
-	  }
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

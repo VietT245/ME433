@@ -1,10 +1,10 @@
-22:59:16 **** Incremental Build of configuration Debug for project HW11 ****
+23:33:11 **** Incremental Build of configuration Debug for project HW11 ****
 make -j9 all 
 arm-none-eabi-size  HW11.elf 
    text	   data	    bss	    dec	    hex	filename
-  11208	    128	   2088	  13424	   3470	HW11.elf
+  13408	    128	   2232	  15768	   3d98	HW11.elf
 Finished building: default.size.stdout
  
 
-22:59:16 Build Finished. 0 errors, 0 warnings. (took 134ms)
+23:33:11 Build Finished. 0 errors, 0 warnings. (took 132ms)
 

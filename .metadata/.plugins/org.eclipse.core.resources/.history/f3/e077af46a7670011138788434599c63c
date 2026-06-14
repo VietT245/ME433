@@ -115,17 +115,13 @@ int main(void)
     Error_Handler();
   }
 
-  uint8_t c;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 
     /* USER CODE END WHILE */
-	  if (HAL_UART_Receive(&huart1, &c, 1, 10) == HAL_OK)
-	  {
-		  printf("%c", c);
-	  }
+	  HAL_UART_Transmit("a character array");
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
