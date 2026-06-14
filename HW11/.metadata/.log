@@ -1,0 +1,16 @@
+!SESSION 2026-06-13 22:21:45.235 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/viet_tong/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -keyring /Users/viet_tong/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-06-13 22:22:50.427
+!MESSAGE Log4j2 initialized with config file /Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW11/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-06-13 22:22:52.321
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-06-13 22:22:56.294
+!MESSAGE ProjectImporter: registered
