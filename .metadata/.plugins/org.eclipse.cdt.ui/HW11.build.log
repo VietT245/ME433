@@ -1,13 +1,10 @@
-22:56:26 **** Incremental Build of configuration Debug for project HW11 ****
+22:59:16 **** Incremental Build of configuration Debug for project HW11 ****
 make -j9 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:11: error: implicit declaration of function 'HAL_delay'; did you mean 'HAL_Delay'? [-Wimplicit-function-declaration]
-  120 |           HAL_delay(1000);
-      |           ^~~~~~~~~
-      |           HAL_Delay
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j9 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-size  HW11.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11208	    128	   2088	  13424	   3470	HW11.elf
+Finished building: default.size.stdout
+ 
 
-22:56:27 Build Failed. 2 errors, 0 warnings. (took 188ms)
+22:59:16 Build Finished. 0 errors, 0 warnings. (took 134ms)
 

@@ -15,3 +15,4 @@
 2026-06-13 22:40:53,564 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] Start the detection of the machine's architecture
 2026-06-13 22:40:53,574 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] use arm architecture
 2026-06-13 22:40:53,574 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] Architecture: Apple Silicon (ARM64)
+2026-06-13 22:58:16,749 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
