@@ -116,8 +116,8 @@ int main(void)
   {
 
     /* USER CODE END WHILE */
-	  printf("Hello there!\r\n");
-	  HAL_delay(1000);
+	  printf("Hello there!")
+	  Hal_delay(1000)
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
