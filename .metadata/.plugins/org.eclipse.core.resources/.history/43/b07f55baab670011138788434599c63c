@@ -22,7 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <string.h>
-#include <stdio.h>
 
 /* USER CODE END Includes */
 
@@ -46,7 +45,6 @@
 COM_InitTypeDef BspCOMInit;
 
 UART_HandleTypeDef huart1;
-UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
 
@@ -56,7 +54,6 @@ UART_HandleTypeDef huart3;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
-static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -96,7 +93,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
-  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -119,34 +115,25 @@ int main(void)
     Error_Handler();
   }
 
+  uint8_t pc_rx;
+  uint8_t pico_rx;
   /* Infinite loop */
-  uint8_t rxByte;
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 
     /* USER CODE END WHILE */
-	  // Receive from computer via VCP, send to Pico
-	      if (HAL_UART_Receive(&hcom_uart[COM1], &rxByte, 1, 0) == HAL_OK)
+	  // PC → STM32 (ST-LINK VCP via BSP)
+	      if (BSP_COM_Read(COM1, &pc_rx, 1) == BSP_ERROR_NONE)
 	      {
-	          HAL_UART_Transmit(&huart1, &rxByte, 1, HAL_MAX_DELAY);
-	      }
-	      else
-	      {
-	          __HAL_UART_CLEAR_OREFLAG(&hcom_uart[COM1]);
+	          HAL_UART_Transmit(&huart1, &pc_rx, 1, HAL_MAX_DELAY); // send to Pico
 	      }
 
-	      // Receive from Pico via USART1, print to computer
-	      if (HAL_UART_Receive(&huart1, &rxByte, 1, 0) == HAL_OK)
+	      // Pico → STM32
+	      if (HAL_UART_Receive(&huart1, &pico_rx, 1, 10) == HAL_OK)
 	      {
-	          printf("%c", rxByte);
-	          fflush(stdout);
+	          BSP_COM_Write(COM1, &pico_rx, 1); // send to PC
 	      }
-	      else
-	      {
-	          __HAL_UART_CLEAR_OREFLAG(&huart1);
-	      }
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -235,42 +222,6 @@ static void MX_USART1_UART_Init(void)
   /* USER CODE BEGIN USART1_Init 2 */
 
   /* USER CODE END USART1_Init 2 */
-
-}
-
-/**
-  * @brief USART3 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART3_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART3_Init 0 */
-
-  /* USER CODE END USART3_Init 0 */
-
-  /* USER CODE BEGIN USART3_Init 1 */
-
-  /* USER CODE END USART3_Init 1 */
-  huart3.Instance = USART3;
-  huart3.Init.BaudRate = 115200;
-  huart3.Init.WordLength = UART_WORDLENGTH_8B;
-  huart3.Init.StopBits = UART_STOPBITS_1;
-  huart3.Init.Parity = UART_PARITY_NONE;
-  huart3.Init.Mode = UART_MODE_TX_RX;
-  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart3.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart3.Init.ClockPrescaler = UART_PRESCALER_DIV1;
-  huart3.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART3_Init 2 */
-
-  /* USER CODE END USART3_Init 2 */
 
 }
 

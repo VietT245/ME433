@@ -120,7 +120,9 @@ int main(void)
   }
 
   /* Infinite loop */
+  printf("STM32 Ready\r\n");
   uint8_t rxByte;
+  fflush(stdout);
   /* USER CODE BEGIN WHILE */
   while (1)
   {
@@ -131,10 +133,6 @@ int main(void)
 	      {
 	          HAL_UART_Transmit(&huart1, &rxByte, 1, HAL_MAX_DELAY);
 	      }
-	      else
-	      {
-	          __HAL_UART_CLEAR_OREFLAG(&hcom_uart[COM1]);
-	      }
 
 	      // Receive from Pico via USART1, print to computer
 	      if (HAL_UART_Receive(&huart1, &rxByte, 1, 0) == HAL_OK)
@@ -142,11 +140,6 @@ int main(void)
 	          printf("%c", rxByte);
 	          fflush(stdout);
 	      }
-	      else
-	      {
-	          __HAL_UART_CLEAR_OREFLAG(&huart1);
-	      }
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
