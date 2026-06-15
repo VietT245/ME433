@@ -11,8 +11,8 @@ import matplotlib.gridspec as gridspec
 # ── Command-line arguments ────────────────────────────────────────────────────
 def parse_args():
     p = argparse.ArgumentParser(description="HX711 force sensor host script")
-    p.add_argument("--port",    default="/dev/ttyACM0",
-                   help="Serial port (default: /dev/ttyACM0, Windows: COMx)")
+    p.add_argument("--port",    default="/dev/tty.usbmodem101",
+                   help="Serial port (default: /dev/tty.usbmodem101, Windows: COMx)")
     p.add_argument("--baud",    type=int, default=115200,
                    help="Baud rate (default: 115200)")
     p.add_argument("--samples", type=int, default=400,
