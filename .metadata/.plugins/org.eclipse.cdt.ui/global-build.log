@@ -610,3 +610,1360 @@ Finished building: default.size.stdout
  
 Finished building: HW16.list
  
+09:45:18 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+09:46:48 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+09:47:09 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+09:47:28 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:01:39 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+10:01:58 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:02:14 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:02:30 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:02:39 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:02:49 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:02:59 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:18:58 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+10:21:09 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  29832	    128	   2520	  32480	   7ee0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:21:29 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:546:1: error: expected identifier or '(' before '}' token
+  546 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:24:03 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:27:11 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:62:1: error: unknown type name 'voltatile'; did you mean 'volatile'?
+   62 | voltatile uint8_t sample_state = 0;
+      | ^~~~~~~~~
+      | volatile
+../Core/Src/main.c:62:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sample_state'
+   62 | voltatile uint8_t sample_state = 0;
+      |                   ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:157:11: error: 'sample_state' undeclared (first use in this function)
+  157 |           sample_state = 1;
+      |           ^~~~~~~~~~~~
+../Core/Src/main.c:157:11: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:557:13: error: 'sample_state' undeclared (first use in this function)
+  557 |         if (sample_state == 1)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:27:27 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:62:1: error: unknown type name 'voltatile'; did you mean 'volatile'?
+   62 | voltatile uint8_t sample_state = 0;
+      | ^~~~~~~~~
+      | volatile
+../Core/Src/main.c:62:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sample_state'
+   62 | voltatile uint8_t sample_state = 0;
+      |                   ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:157:11: error: 'sample_state' undeclared (first use in this function)
+  157 |           sample_state = 1;
+      |           ^~~~~~~~~~~~
+../Core/Src/main.c:157:11: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:557:13: error: 'sample_state' undeclared (first use in this function)
+  557 |         if (sample_state == 1)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:28:32 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:62:1: error: unknown type name 'voltatile'; did you mean 'volatile'?
+   62 | voltatile uint8_t sample_state = 0;
+      | ^~~~~~~~~
+      | volatile
+../Core/Src/main.c:62:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sample_state'
+   62 | voltatile uint8_t sample_state = 0;
+      |                   ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:157:11: error: 'sample_state' undeclared (first use in this function)
+  157 |           sample_state = 1;
+      |           ^~~~~~~~~~~~
+../Core/Src/main.c:157:11: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:557:13: error: 'sample_state' undeclared (first use in this function)
+  557 |         if (sample_state == 1)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:28:41 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:62:1: error: unknown type name 'voltatile'; did you mean 'volatile'?
+   62 | voltatile uint8_t sample_state = 0;
+      | ^~~~~~~~~
+      | volatile
+../Core/Src/main.c:62:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sample_state'
+   62 | voltatile uint8_t sample_state = 0;
+      |                   ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:157:11: error: 'sample_state' undeclared (first use in this function)
+  157 |           sample_state = 1;
+      |           ^~~~~~~~~~~~
+../Core/Src/main.c:157:11: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:557:13: error: 'sample_state' undeclared (first use in this function)
+  557 |         if (sample_state == 1)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:28:47 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:62:1: error: unknown type name 'voltatile'; did you mean 'volatile'?
+   62 | voltatile uint8_t sample_state = 0;
+      | ^~~~~~~~~
+      | volatile
+../Core/Src/main.c:62:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sample_state'
+   62 | voltatile uint8_t sample_state = 0;
+      |                   ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:28:54 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:29:02 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:62:1: error: unknown type name 'voltatile'; did you mean 'volatile'?
+   62 | voltatile uint8_t sample_staet =
+      | ^~~~~~~~~
+      | volatile
+../Core/Src/main.c:62:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sample_staet'
+   62 | voltatile uint8_t sample_staet =
+      |                   ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:111:3: error: implicit declaration of function 'SystemClock_Config'; did you mean 'SysTick_Config'? [-Wimplicit-function-declaration]
+  111 |   SystemClock_Config();
+      |   ^~~~~~~~~~~~~~~~~~
+      |   SysTick_Config
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:171:6: warning: conflicting types for 'SystemClock_Config'; have 'void(void)'
+  171 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:111:3: note: previous implicit declaration of 'SystemClock_Config' with type 'void(void)'
+  111 |   SystemClock_Config();
+      |   ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:29:11 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:43:56 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+10:47:11 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:156:19: error: 'sample_state' undeclared (first use in this function)
+  156 |                   sample_state = 1;
+      |                   ^~~~~~~~~~~~
+../Core/Src/main.c:156:19: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:211:13: error: invalid storage class for function 'MX_ADC1_Init'
+  211 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:268:13: error: invalid storage class for function 'MX_FDCAN1_Init'
+  268 | static void MX_FDCAN1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_I2C2_Init'
+  311 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:359:13: error: invalid storage class for function 'MX_TIM1_Init'
+  359 | static void MX_TIM1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:435:13: error: invalid storage class for function 'MX_TIM2_Init'
+  435 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:480:13: error: invalid storage class for function 'MX_GPIO_Init'
+  480 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:574:1: error: expected declaration or statement at end of input
+  574 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:66:13: warning: 'MX_GPIO_Init' used but never defined
+   66 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:67:13: warning: 'MX_ADC1_Init' used but never defined
+   67 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:68:13: warning: 'MX_FDCAN1_Init' used but never defined
+   68 | static void MX_FDCAN1_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:69:13: warning: 'MX_I2C2_Init' used but never defined
+   69 | static void MX_I2C2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:70:13: warning: 'MX_TIM1_Init' used but never defined
+   70 | static void MX_TIM1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:71:13: warning: 'MX_TIM2_Init' used but never defined
+   71 | static void MX_TIM2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:565:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  565 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:551:14: warning: 'readINA219' defined but not used [-Wunused-function]
+  551 | signed short readINA219(unsigned char reg){
+      |              ^~~~~~~~~~
+../Core/Src/main.c:543:6: warning: 'HAL_TIM_PeriodElapsedCallback' defined but not used [-Wunused-function]
+  543 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:533:6: warning: 'writeINA219' defined but not used [-Wunused-function]
+  533 | void writeINA219(int reg, int value){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:525:7: warning: 'read_ina219' defined but not used [-Wunused-function]
+  525 | float read_ina219(){
+      |       ^~~~~~~~~~~
+../Core/Src/main.c:517:6: warning: 'init_ina219' defined but not used [-Wunused-function]
+  517 | void init_ina219(){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:497:10: warning: 'ReadServoPositionADC' defined but not used [-Wunused-function]
+  497 | uint32_t ReadServoPositionADC(void)
+      |          ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:480:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  480 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:435:13: warning: 'MX_TIM2_Init' defined but not used [-Wunused-function]
+  435 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:359:13: warning: 'MX_TIM1_Init' defined but not used [-Wunused-function]
+  359 | static void MX_TIM1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  311 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:268:13: warning: 'MX_FDCAN1_Init' defined but not used [-Wunused-function]
+  268 | static void MX_FDCAN1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  211 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:172:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  172 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:49:14 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:156:19: error: 'sample_state' undeclared (first use in this function)
+  156 |                   sample_state = 1;
+      |                   ^~~~~~~~~~~~
+../Core/Src/main.c:156:19: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:211:13: error: invalid storage class for function 'MX_ADC1_Init'
+  211 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:268:13: error: invalid storage class for function 'MX_FDCAN1_Init'
+  268 | static void MX_FDCAN1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:311:13: error: invalid storage class for function 'MX_I2C2_Init'
+  311 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:359:13: error: invalid storage class for function 'MX_TIM1_Init'
+  359 | static void MX_TIM1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:435:13: error: invalid storage class for function 'MX_TIM2_Init'
+  435 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:480:13: error: invalid storage class for function 'MX_GPIO_Init'
+  480 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:574:1: error: expected declaration or statement at end of input
+  574 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:66:13: warning: 'MX_GPIO_Init' used but never defined
+   66 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:67:13: warning: 'MX_ADC1_Init' used but never defined
+   67 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:68:13: warning: 'MX_FDCAN1_Init' used but never defined
+   68 | static void MX_FDCAN1_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:69:13: warning: 'MX_I2C2_Init' used but never defined
+   69 | static void MX_I2C2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:70:13: warning: 'MX_TIM1_Init' used but never defined
+   70 | static void MX_TIM1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:71:13: warning: 'MX_TIM2_Init' used but never defined
+   71 | static void MX_TIM2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:565:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  565 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:551:14: warning: 'readINA219' defined but not used [-Wunused-function]
+  551 | signed short readINA219(unsigned char reg){
+      |              ^~~~~~~~~~
+../Core/Src/main.c:543:6: warning: 'HAL_TIM_PeriodElapsedCallback' defined but not used [-Wunused-function]
+  543 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:533:6: warning: 'writeINA219' defined but not used [-Wunused-function]
+  533 | void writeINA219(int reg, int value){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:525:7: warning: 'read_ina219' defined but not used [-Wunused-function]
+  525 | float read_ina219(){
+      |       ^~~~~~~~~~~
+../Core/Src/main.c:517:6: warning: 'init_ina219' defined but not used [-Wunused-function]
+  517 | void init_ina219(){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:497:10: warning: 'ReadServoPositionADC' defined but not used [-Wunused-function]
+  497 | uint32_t ReadServoPositionADC(void)
+      |          ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:480:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  480 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:435:13: warning: 'MX_TIM2_Init' defined but not used [-Wunused-function]
+  435 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:359:13: warning: 'MX_TIM1_Init' defined but not used [-Wunused-function]
+  359 | static void MX_TIM1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:311:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  311 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:268:13: warning: 'MX_FDCAN1_Init' defined but not used [-Wunused-function]
+  268 | static void MX_FDCAN1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  211 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:172:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  172 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:49:19 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:51:02 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:152:11: error: implicit declaration of function 'BSP_COM_Read'; did you mean 'BSP_COM_Init'? [-Wimplicit-function-declaration]
+  152 |       if (BSP_COM_Read(COM1, &input, 1) == BSP_ERROR_NONE)
+      |           ^~~~~~~~~~~~
+      |           BSP_COM_Init
+../Core/Src/main.c:156:15: error: 'sample_state' undeclared (first use in this function)
+  156 |               sample_state = 1;
+      |               ^~~~~~~~~~~~
+../Core/Src/main.c:156:15: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+10:52:08 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:53:58 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  26824	    128	   2528	  29480	   7328	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+10:59:43 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:129:3: error: implicit declaration of function 'HAL_TIME_PWM_START'; did you mean 'HAL_TIM_PWM_Start'? [-Wimplicit-function-declaration]
+  129 |   HAL_TIME_PWM_START(&htim1, TIM_CHANNEL_2);
+      |   ^~~~~~~~~~~~~~~~~~
+      |   HAL_TIM_PWM_Start
+../Core/Src/main.c:136:3: error: implicit declaration of function '_HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
+  136 |   _HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      |   ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:00:11 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:129:3: error: implicit declaration of function 'HAL_TIME_PWM_START'; did you mean 'HAL_TIM_PWM_Start'? [-Wimplicit-function-declaration]
+  129 |   HAL_TIME_PWM_START(&htim1, TIM_CHANNEL_2);
+      |   ^~~~~~~~~~~~~~~~~~
+      |   HAL_TIM_PWM_Start
+../Core/Src/main.c:136:3: error: implicit declaration of function '_HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
+  136 |   _HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      |   ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:00:22 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:129:3: error: implicit declaration of function 'HAL_TIME_PWM_START'; did you mean 'HAL_TIM_PWM_Start'? [-Wimplicit-function-declaration]
+  129 |   HAL_TIME_PWM_START(&htim1, TIM_CHANNEL_2);
+      |   ^~~~~~~~~~~~~~~~~~
+      |   HAL_TIM_PWM_Start
+../Core/Src/main.c:136:3: error: implicit declaration of function '_HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
+  136 |   _HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      |   ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:00:28 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:129:3: error: implicit declaration of function 'HAL_TIME_PWM_START'; did you mean 'HAL_TIM_PWM_Start'? [-Wimplicit-function-declaration]
+  129 |   HAL_TIME_PWM_START(&htim1, TIM_CHANNEL_2);
+      |   ^~~~~~~~~~~~~~~~~~
+      |   HAL_TIM_PWM_Start
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:01:28 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:02:27 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:03:03 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+11:03:23 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:66:23: error: expected declaration specifiers or '...' before '&' token
+   66 | HAL_TIM_Base_Start_IT(&htim2);
+      |                       ^
+../Core/Src/main.c:68:19: error: expected declaration specifiers or '...' before '&' token
+   68 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                   ^
+In file included from ../Core/Inc/stm32c0xx_hal_conf.h:237,
+                 from ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected declaration specifiers or '...' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:68:27: note: in expansion of macro 'TIM_CHANNEL_1'
+   68 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                           ^~~~~~~~~~~~~
+../Core/Src/main.c:69:19: error: expected declaration specifiers or '...' before '&' token
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                   ^
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected declaration specifiers or '...' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:69:27: note: in expansion of macro 'TIM_CHANNEL_2'
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                           ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected identifier or '(' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:71:31: note: in expansion of macro 'TIM_CHANNEL_1'
+   71 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:71:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   71 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:71:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   71 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected identifier or '(' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:72:31: note: in expansion of macro 'TIM_CHANNEL_2'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:03:29 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:10:14 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:67:23: error: expected declaration specifiers or '...' before '&' token
+   67 | HAL_TIM_Base_Start_IT(&htim2);
+      |                       ^
+../Core/Src/main.c:69:19: error: expected declaration specifiers or '...' before '&' token
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                   ^
+In file included from ../Core/Inc/stm32c0xx_hal_conf.h:237,
+                 from ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected declaration specifiers or '...' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:69:27: note: in expansion of macro 'TIM_CHANNEL_1'
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                           ^~~~~~~~~~~~~
+../Core/Src/main.c:70:19: error: expected declaration specifiers or '...' before '&' token
+   70 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                   ^
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected declaration specifiers or '...' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:70:27: note: in expansion of macro 'TIM_CHANNEL_2'
+   70 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                           ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected identifier or '(' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:72:31: note: in expansion of macro 'TIM_CHANNEL_1'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected identifier or '(' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:73:31: note: in expansion of macro 'TIM_CHANNEL_2'
+   73 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:73:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   73 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:73:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   73 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:10:18 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:66:23: error: expected declaration specifiers or '...' before '&' token
+   66 | HAL_TIM_Base_Start_IT(&htim2);
+      |                       ^
+../Core/Src/main.c:68:19: error: expected declaration specifiers or '...' before '&' token
+   68 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                   ^
+In file included from ../Core/Inc/stm32c0xx_hal_conf.h:237,
+                 from ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected declaration specifiers or '...' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:68:27: note: in expansion of macro 'TIM_CHANNEL_1'
+   68 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                           ^~~~~~~~~~~~~
+../Core/Src/main.c:69:19: error: expected declaration specifiers or '...' before '&' token
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                   ^
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected declaration specifiers or '...' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:69:27: note: in expansion of macro 'TIM_CHANNEL_2'
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                           ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected identifier or '(' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:71:31: note: in expansion of macro 'TIM_CHANNEL_1'
+   71 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:71:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   71 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:71:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   71 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected identifier or '(' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:72:31: note: in expansion of macro 'TIM_CHANNEL_2'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:10:27 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:11:22 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:67:23: error: expected declaration specifiers or '...' before '&' token
+   67 | HAL_TIM_Base_Start_IT(&htim2);
+      |                       ^
+../Core/Src/main.c:69:19: error: expected declaration specifiers or '...' before '&' token
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                   ^
+In file included from ../Core/Inc/stm32c0xx_hal_conf.h:237,
+                 from ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected declaration specifiers or '...' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:69:27: note: in expansion of macro 'TIM_CHANNEL_1'
+   69 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |                           ^~~~~~~~~~~~~
+../Core/Src/main.c:70:19: error: expected declaration specifiers or '...' before '&' token
+   70 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                   ^
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected declaration specifiers or '...' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:70:27: note: in expansion of macro 'TIM_CHANNEL_2'
+   70 | HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+      |                           ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:776:44: error: expected identifier or '(' before numeric constant
+  776 | #define TIM_CHANNEL_1                      0x00000000U                          /*!< Capture/compare channel 1 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:72:31: note: in expansion of macro 'TIM_CHANNEL_1'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:72:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   72 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:777:44: error: expected identifier or '(' before numeric constant
+  777 | #define TIM_CHANNEL_2                      0x00000004U                          /*!< Capture/compare channel 2 identifier      */
+      |                                            ^~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:6: note: in definition of macro '__HAL_TIM_SET_COMPARE'
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:73:31: note: in expansion of macro 'TIM_CHANNEL_2'
+   73 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:19: error: expected ')' before '==' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                   ^~
+../Core/Src/main.c:73:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   73 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1569:37: error: expected ')' before '?' token
+ 1569 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
+      |                                     ^
+../Core/Src/main.c:73:1: note: in expansion of macro '__HAL_TIM_SET_COMPARE'
+   73 | __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+      | ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:13:29 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30028	    128	   2520	  32676	   7fa4	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:14:56 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30612	    128	   2520	  33260	   81ec	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:16:27 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:7: error: implicit declaration of function 'PWM_Test_Motor' [-Wimplicit-function-declaration]
+  158 |       PWM_Test_Motor();
+      |       ^~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:557:6: warning: conflicting types for 'PWM_Test_Motor'; have 'void(void)'
+  557 | void PWM_Test_Motor(void)
+      |      ^~~~~~~~~~~~~~
+../Core/Src/main.c:158:7: note: previous implicit declaration of 'PWM_Test_Motor' with type 'void(void)'
+  158 |       PWM_Test_Motor();
+      |       ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:17:30 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30612	    128	   2520	  33260	   81ec	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:17:35 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:7: error: implicit declaration of function 'PWM_Test_Motor' [-Wimplicit-function-declaration]
+  158 |       PWM_Test_Motor();
+      |       ^~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:557:6: warning: conflicting types for 'PWM_Test_Motor'; have 'void(void)'
+  557 | void PWM_Test_Motor(void)
+      |      ^~~~~~~~~~~~~~
+../Core/Src/main.c:158:7: note: previous implicit declaration of 'PWM_Test_Motor' with type 'void(void)'
+  158 |       PWM_Test_Motor();
+      |       ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:21:05 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  21624	     36	   2180	  23840	   5d20	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:21:35 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21624	     36	   2180	  23840	   5d20	HW16.elf
+Finished building: default.size.stdout
+ 
+11:23:17 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:94:13: error: implicit declaration of function 'Motor_Off' [-Wimplicit-function-declaration]
+   94 |             Motor_Off();
+      |             ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:568:6: error: redefinition of 'HAL_TIM_PeriodElapsedCallback'
+  568 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:85:6: note: previous definition of 'HAL_TIM_PeriodElapsedCallback' with type 'void(TIM_HandleTypeDef *)'
+   85 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:608:6: warning: conflicting types for 'Motor_Off'; have 'void(void)'
+  608 | void Motor_Off(void)
+      |      ^~~~~~~~~
+../Core/Src/main.c:94:13: note: previous implicit declaration of 'Motor_Off' with type 'void(void)'
+   94 |             Motor_Off();
+      |             ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:24:23 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  21624	     36	   2180	  23840	   5d20	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:24:31 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:94:13: error: implicit declaration of function 'Motor_Off' [-Wimplicit-function-declaration]
+   94 |             Motor_Off();
+      |             ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:568:6: error: redefinition of 'HAL_TIM_PeriodElapsedCallback'
+  568 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:85:6: note: previous definition of 'HAL_TIM_PeriodElapsedCallback' with type 'void(TIM_HandleTypeDef *)'
+   85 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:608:6: warning: conflicting types for 'Motor_Off'; have 'void(void)'
+  608 | void Motor_Off(void)
+      |      ^~~~~~~~~
+../Core/Src/main.c:94:13: note: previous implicit declaration of 'Motor_Off' with type 'void(void)'
+   94 |             Motor_Off();
+      |             ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:25:21 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:94:13: error: implicit declaration of function 'Motor_Off' [-Wimplicit-function-declaration]
+   94 |             Motor_Off();
+      |             ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:110:6: warning: conflicting types for 'Motor_Off'; have 'void(void)'
+  110 | void Motor_Off(void);
+      |      ^~~~~~~~~
+../Core/Src/main.c:94:13: note: previous implicit declaration of 'Motor_Off' with type 'void(void)'
+   94 |             Motor_Off();
+      |             ^~~~~~~~~
+../Core/Src/main.c:569:6: error: redefinition of 'HAL_TIM_PeriodElapsedCallback'
+  569 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:85:6: note: previous definition of 'HAL_TIM_PeriodElapsedCallback' with type 'void(TIM_HandleTypeDef *)'
+   85 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:25:35 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:569:6: error: redefinition of 'HAL_TIM_PeriodElapsedCallback'
+  569 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:86:6: note: previous definition of 'HAL_TIM_PeriodElapsedCallback' with type 'void(TIM_HandleTypeDef *)'
+   86 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:28:09 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:553:13: error: implicit declaration of function 'Motor_Off' [-Wimplicit-function-declaration]
+  553 |             Motor_Off();
+      |             ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:603:6: warning: conflicting types for 'Motor_Off'; have 'void(void)'
+  603 | void Motor_Off(void)
+      |      ^~~~~~~~~
+../Core/Src/main.c:553:13: note: previous implicit declaration of 'Motor_Off' with type 'void(void)'
+  553 |             Motor_Off();
+      |             ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:28:27 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30796	    128	   2528	  33452	   82ac	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:30:01 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  30796	    128	   2528	  33452	   82ac	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:30:29 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:563:29: error: 'desired_current_mA' undeclared (first use in this function); did you mean 'desire_current_mA'?
+  563 |             int16_t error = desired_current_mA - actual_current_mA;
+      |                             ^~~~~~~~~~~~~~~~~~
+      |                             desire_current_mA
+../Core/Src/main.c:563:29: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:555:18: warning: unused variable 'adcValue' [-Wunused-variable]
+  555 |         uint32_t adcValue = ReadServoPositionADC();
+      |                  ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:31:00 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:168:29: error: 'huart2' undeclared (first use in this function)
+  168 |       if (HAL_UART_Receive(&huart2, &input, 1, 10) == HAL_OK)
+      |                             ^~~~~~
+../Core/Src/main.c:168:29: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:577:29: error: 'desired_current_mA' undeclared (first use in this function); did you mean 'desire_current_mA'?
+  577 |             int16_t error = desired_current_mA - actual_current_mA;
+      |                             ^~~~~~~~~~~~~~~~~~
+      |                             desire_current_mA
+../Core/Src/main.c:569:18: warning: unused variable 'adcValue' [-Wunused-variable]
+  569 |         uint32_t adcValue = ReadServoPositionADC();
+      |                  ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:32:56 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:168:29: error: 'huart2' undeclared (first use in this function)
+  168 |       if (HAL_UART_Receive(&huart2, &input, 1, 10) == HAL_OK)
+      |                             ^~~~~~
+../Core/Src/main.c:168:29: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:33:53 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:168:11: error: implicit declaration of function 'BSP_COM_Read'; did you mean 'BSP_COM_Init'? [-Wimplicit-function-declaration]
+  168 |       if (BSP_COM_Read(COM1, &input, 1) == BSP_ERROR_NONE)
+      |           ^~~~~~~~~~~~
+      |           BSP_COM_Init
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:37:17 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  34480	    132	   2532	  37144	   9118	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:40:19 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  35012	    132	   2532	  37676	   932c	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:41:35 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  34884	    132	   2532	  37548	   92ac	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:43:54 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:181:22: error: 'adc_shared' undeclared (first use in this function)
+  181 |                      adc_shared,
+      |                      ^~~~~~~~~~
+../Core/Src/main.c:181:22: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:182:22: error: 'current_shared' undeclared (first use in this function)
+  182 |                      current_shared);
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:579:13: error: 'adc_shared' undeclared (first use in this function)
+  579 |             adc_shared = ReadServoPositionADC();
+      |             ^~~~~~~~~~
+../Core/Src/main.c:580:13: error: 'current_shared' undeclared (first use in this function)
+  580 |             current_shared = (int16_t)read_ina219();
+      |             ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+11:44:18 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  38464	    132	   2540	  41136	   a0b0	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 
+11:50:48 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HW16.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW16.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW16.elf
+ 
+arm-none-eabi-size  HW16.elf 
+arm-none-eabi-objdump -h -S HW16.elf  > "HW16.list"
+   text	   data	    bss	    dec	    hex	filename
+  38500	    140	   2540	  41180	   a0dc	HW16.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW16.list
+ 

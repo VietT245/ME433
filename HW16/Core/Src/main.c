@@ -38,6 +38,9 @@
 #define INA219_REG_CONFIG       0x00
 #define INA219_REG_CURRENT      0x04
 #define INA219_REG_CALIBRATION  0x05
+
+#define ADC_LOW_LIMIT   250
+#define ADC_HIGH_LIMIT  (4095 - 250)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -59,6 +62,16 @@ TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
 char txBuf[64];
+volatile uint8_t sample_state = 0;
+
+volatile int16_t desired_current_mA = 50;
+volatile int16_t actual_current_mA = 0;
+
+volatile uint32_t adc_shared = 0;
+volatile int16_t current_shared = 0;
+
+volatile float Kp = 0.8f;
+volatile float Ki = 0.02f;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -77,6 +90,9 @@ void init_ina219(void);
 float read_ina219(void);
 void writeINA219(int reg, int value);
 signed short readINA219(unsigned char reg);
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+void PWM_Test_Motor(void);
+void Motor_Off(void);
 
 /* USER CODE END PFP */
 
@@ -121,6 +137,14 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   init_ina219();
+  HAL_TIM_Base_Start_IT(&htim2);
+
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+
+  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+
   /* USER CODE END 2 */
 
   /* Initialize leds */
@@ -141,20 +165,35 @@ int main(void)
     Error_Handler();
   }
 
+  setvbuf(stdout, NULL, _IONBF, 0);
+//  printf("HELLO WORLD\r\n"); // Test
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  uint32_t adcValue = ReadServoPositionADC();
-	  int16_t current_mA = (int16_t)read_ina219();
+      char input;
 
-	  printf("Position = %lu, Current = %d mA\r\n",
-	         adcValue,
-	         current_mA);
+      scanf("%c", &input);
 
-	    HAL_Delay(100);
-    /* USER CODE BEGIN 3 */
+      if (input == 'a')
+      {
+          sample_state = 1;
+
+          while (sample_state == 1)
+          {
+              // print latest ISR data safely here
+              printf("ADC = %lu, Current = %d mA\r\n",
+                     adc_shared,
+                     current_shared);
+
+              HAL_Delay(50);
+          }
+
+          printf("Done\r\n");
+      }
   }
+  /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
 
@@ -532,6 +571,58 @@ void writeINA219(int reg, int value){
     HAL_I2C_Master_Transmit(&hi2c2, INA219_ADDR<<1, buf, 3, 10);
 }
 
+// timer based interrupt
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim == &htim2)
+    {
+        static uint16_t counter = 0;
+        static float integral = 0;
+
+        if (sample_state == 1)
+        {
+            // read sensors only
+            adc_shared = ReadServoPositionADC();
+            current_shared = (int16_t)read_ina219();
+
+            float error = (float)(desired_current_mA - actual_current_mA);
+
+            integral += error;
+
+            float control = (Kp * error) + (Ki * integral);
+
+            uint16_t pwm_value;
+
+            if (control < 0)
+                pwm_value = 2400;
+            else if (control > 2400)
+                pwm_value = 0;
+            else
+                pwm_value = 2400 - (uint16_t)control;
+
+            if (pwm_value > 2400) pwm_value = 2400;
+
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, pwm_value);
+
+            counter++;
+
+            if (counter == 100)
+                desired_current_mA = -desired_current_mA;
+
+            if (counter >= 400)
+            {
+                sample_state = 0;
+                counter = 0;
+                integral = 0;
+
+                __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+                __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+            }
+        }
+    }
+}
+
 // read 2 bytes
 signed short readINA219(unsigned char reg){
     HAL_I2C_Master_Transmit(&hi2c2, INA219_ADDR<<1, &reg, 1, 10);
@@ -540,6 +631,35 @@ signed short readINA219(unsigned char reg){
 
     signed short value = (buffer[0]<<8)|buffer[1];
     return value;
+}
+
+void PWM_Test_Motor(void)
+{
+    // move one direction at 50% speed
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 1200);
+    HAL_Delay(800);
+
+    // stop
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+    HAL_Delay(200);
+
+    // move opposite direction at 50% speed
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1200);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+    HAL_Delay(800);
+
+    // stop again
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
+    HAL_Delay(200);
+}
+
+void Motor_Off(void)
+{
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 2400);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2400);
 }
 /* USER CODE END 4 */
 
