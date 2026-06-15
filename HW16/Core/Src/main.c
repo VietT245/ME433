@@ -139,6 +139,8 @@ int main(void)
   init_ina219();
   HAL_TIM_Base_Start_IT(&htim2);
 
+  sample_state = 1;
+
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
 
@@ -172,26 +174,22 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      char input;
-
-      scanf("%c", &input);
-
-      if (input == 'a')
+      // Wait for ISR to finish the experiment
+      while (sample_state == 1)
       {
-          sample_state = 1;
+    	  printf("D=%d, I=%d, ADC=%lu\r\n",
+    	         desired_current_mA,
+    	         actual_current_mA,
+    	         adc_shared);
 
-          while (sample_state == 1)
-          {
-              // print latest ISR data safely here
-              printf("ADC = %lu, Current = %d mA\r\n",
-                     adc_shared,
-                     current_shared);
-
-              HAL_Delay(50);
-          }
-
-          printf("Done\r\n");
+          HAL_Delay(10);
       }
+
+      printf("Done\r\n");
+
+      HAL_Delay(2000);
+
+      sample_state = 1;
   }
   /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */

@@ -43,3 +43,5 @@
 2026-06-15 07:26:48,321 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] use arm architecture
 2026-06-15 07:26:48,321 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] Architecture: Apple Silicon (ARM64)
 2026-06-15 07:28:08,316 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-06-15 12:19:46,860 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-06-15 12:19:49,124 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
