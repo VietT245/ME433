@@ -1,0 +1,5 @@
+../Core/Src/main.c:50:17:AS5600_ReadRawAngle	1
+../Core/Src/main.c:60:14:AS5600_RawToDegrees	1
+../Core/Src/main.c:68:16:HX711_Read	5
+../Core/Src/main.c:104:13:UART_Print	1
+../Core/Src/main.c:112:6:EncoderForce_Stream	2

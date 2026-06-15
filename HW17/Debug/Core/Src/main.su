@@ -1,0 +1,5 @@
+../Core/Src/main.c:50:17:AS5600_ReadRawAngle	24	static
+../Core/Src/main.c:60:14:AS5600_RawToDegrees	16	static
+../Core/Src/main.c:68:16:HX711_Read	32	static,ignoring_inline_asm
+../Core/Src/main.c:104:13:UART_Print	16	static
+../Core/Src/main.c:112:6:EncoderForce_Stream	120	static
