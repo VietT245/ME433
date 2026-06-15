@@ -145,11 +145,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	    uint32_t adcValue = ReadServoPositionADC();
+	  uint32_t adcValue = ReadServoPositionADC();
+	  int16_t current_mA = (int16_t)read_ina219();
 
-	    printf("Position = %lu, Current = %.2f mA\r\n",
-	           adcValue,
-	           read_ina219());
+	  printf("Position = %lu, Current = %d mA\r\n",
+	         adcValue,
+	         current_mA);
 
 	    HAL_Delay(100);
     /* USER CODE BEGIN 3 */
