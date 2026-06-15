@@ -75,9 +75,9 @@ uint32_t ReadServoPositionADC(void);
 
 void init_ina219(void);
 float read_ina219(void);
-
 void writeINA219(int reg, int value);
 signed short readINA219(unsigned char reg);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -121,8 +121,6 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   init_ina219();
-
-  HAL_Delay(10);
   /* USER CODE END 2 */
 
   /* Initialize leds */
@@ -147,16 +145,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  uint32_t adcValue = ReadServoPositionADC();
-	      float current_mA = read_ina219();
+	    uint32_t adcValue = ReadServoPositionADC();
 
-	      printf("ADC=%lu  Current=%.1f mA\r\n",
-	             adcValue,
-	             current_mA);
+	    printf("Position = %lu, Current = %.2f mA\r\n",
+	           adcValue,
+	           read_ina219());
 
-	      HAL_Delay(100);
-    /* USER CODE END WHILE */
-
+	    HAL_Delay(100);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -510,54 +505,40 @@ uint32_t ReadServoPositionADC(void)
 
     return raw;
 }
-void init_ina219(void)
-{
+
+void init_ina219(){
+    // set the INA219 sensitivity - 10 bit, plus/minus160mV, 148us per sample
     unsigned short ina219_calValue = 1024;
     unsigned short ina219_config = 0b0011000010001111;
-
     writeINA219(INA219_REG_CALIBRATION, ina219_calValue);
     writeINA219(INA219_REG_CONFIG, ina219_config);
 }
 
-float read_ina219(void)
-{
+float read_ina219(){
+    float ma = 0;
     signed short value = readINA219(INA219_REG_CURRENT);
-
-    return value / 3.0f;
+    ma = value / 3.0;
+    return ma;
 }
 
-void writeINA219(int reg, int value)
-{
+// write 2 bytes
+void writeINA219(int reg, int value){
     uint8_t buf[3];
-
     buf[0] = reg;
-    buf[1] = value >> 8;
-    buf[2] = value & 0xFF;
+    buf[1] = value>>8;
+    buf[2] = value&0xff;
 
-    HAL_I2C_Master_Transmit(&hi2c2,
-                            INA219_ADDR << 1,
-                            buf,
-                            3,
-                            10);
+    HAL_I2C_Master_Transmit(&hi2c2, INA219_ADDR<<1, buf, 3, 10);
 }
 
-signed short readINA219(unsigned char reg)
-{
-    HAL_I2C_Master_Transmit(&hi2c2,
-                            INA219_ADDR << 1,
-                            &reg,
-                            1,
-                            10);
-
+// read 2 bytes
+signed short readINA219(unsigned char reg){
+    HAL_I2C_Master_Transmit(&hi2c2, INA219_ADDR<<1, &reg, 1, 10);
     uint8_t buffer[2];
+    HAL_I2C_Master_Receive(&hi2c2, INA219_ADDR<<1, buffer, 2, 10);
 
-    HAL_I2C_Master_Receive(&hi2c2,
-                           INA219_ADDR << 1,
-                           buffer,
-                           2,
-                           10);
-
-    return (signed short)((buffer[0] << 8) | buffer[1]);
+    signed short value = (buffer[0]<<8)|buffer[1];
+    return value;
 }
 /* USER CODE END 4 */
 
