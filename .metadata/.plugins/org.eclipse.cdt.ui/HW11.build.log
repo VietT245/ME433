@@ -1,17 +1,10 @@
-00:34:12 **** Incremental Build of configuration Debug for project HW11 ****
+07:35:37 **** Incremental Build of configuration Debug for project HW11 ****
 make -j9 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HW11.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW11/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW11.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HW11.elf
- 
 arm-none-eabi-size  HW11.elf 
-arm-none-eabi-objdump -h -S HW11.elf  > "HW11.list"
    text	   data	    bss	    dec	    hex	filename
   13800	    128	   2384	  16312	   3fb8	HW11.elf
 Finished building: default.size.stdout
  
-Finished building: HW11.list
- 
 
-00:34:12 Build Finished. 0 errors, 0 warnings. (took 421ms)
+07:35:37 Build Finished. 0 errors, 0 warnings. (took 136ms)
 

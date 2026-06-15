@@ -1,24 +1,10 @@
-06:53:52 **** Incremental Build of configuration Debug for project HW16 ****
+08:09:21 **** Incremental Build of configuration Debug for project HW16 ****
 make -j9 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:222:26: error: implicit declaration of function 'BSP_COM_GetHandle' [-Wimplicit-function-declaration]
-  222 |     if (HAL_UART_Receive(BSP_COM_GetHandle(COM1), &ch, 1, 0) == HAL_OK)
-      |                          ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:222:26: error: passing argument 1 of 'HAL_UART_Receive' makes pointer from integer without a cast [-Wint-conversion]
-  222 |     if (HAL_UART_Receive(BSP_COM_GetHandle(COM1), &ch, 1, 0) == HAL_OK)
-      |                          ^~~~~~~~~~~~~~~~~~~~~~~
-      |                          |
-      |                          int
-In file included from ../Core/Inc/stm32c0xx_hal_conf.h:241,
-                 from ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h:30,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_uart.h:1632:56: note: expected 'UART_HandleTypeDef *' {aka 'struct __UART_HandleTypeDef *'} but argument is of type 'int'
- 1632 | HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                    ~~~~~~~~~~~~~~~~~~~~^~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j9 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29364	    128	   2520	  32012	   7d0c	HW16.elf
+Finished building: default.size.stdout
+ 
 
-06:53:52 Build Failed. 3 errors, 0 warnings. (took 137ms)
+08:09:21 Build Finished. 0 errors, 0 warnings. (took 144ms)
 
