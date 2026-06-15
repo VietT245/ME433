@@ -25,7 +25,6 @@ WAIT_SEC        = 1.0    # seconds to wait before recording starts
 RECORD_SEC      = 7.0    # seconds to record data
 
 # Optional: set to a float to convert raw HX711 counts to Newtons
-# e.g. if 1 Newton = 50000 counts, set FORCE_SCALE = 1.0 / 50000
 FORCE_SCALE     = None   # None = plot raw counts
 
 # ------------------------------------------------------------------ #
@@ -44,8 +43,6 @@ except serial.SerialException as e:
 # ------------------------------------------------------------------ #
 print(f"Waiting {WAIT_SEC}s before recording...")
 time.sleep(WAIT_SEC)
-
-# Flush any data that arrived during the wait so we start clean
 ser.reset_input_buffer()
 
 # ------------------------------------------------------------------ #
@@ -99,7 +96,7 @@ if len(times) > 1:
     print(f"Effective sample rate: {actual_rate:.1f} Hz")
 
 # ------------------------------------------------------------------ #
-#  Plot                                                               #
+#  Plot — handles constant/missing data gracefully                    #
 # ------------------------------------------------------------------ #
 if not times:
     print("No data received — check your serial port and STM32 connection.")
@@ -108,23 +105,37 @@ if not times:
 fig, (ax_angle, ax_force) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 fig.suptitle(f"Encoder & Force — {RECORD_SEC}s Capture", fontsize=13)
 
-# Angle
+# --- Angle ---
 ax_angle.plot(times, angles, color="#2196F3", linewidth=1.5)
 ax_angle.set_ylabel("Angle (°)")
-ax_angle.set_ylim(0, 360)
 ax_angle.grid(True, alpha=0.3)
-ax_angle.set_title(f"Min: {min(angles):.1f}°  Max: {max(angles):.1f}°  "
-                   f"Range: {max(angles)-min(angles):.1f}°", fontsize=9)
 
-# Force
+a_min, a_max = min(angles), max(angles)
+a_range = a_max - a_min
+# Add padding so a flat line is still visible
+ax_angle.set_ylim(a_min - max(a_range * 0.1, 5), a_max + max(a_range * 0.1, 5))
+ax_angle.set_title(
+    f"Min: {a_min:.1f}°  Max: {a_max:.1f}°  Range: {a_range:.1f}°"
+    + ("  (AS5600 not detected — check wiring)" if a_range < 0.1 else ""),
+    fontsize=9
+)
+
+# --- Force ---
 force_label = "Force (N)" if FORCE_SCALE else "Force (raw counts)"
 ax_force.plot(times, forces, color="#E91E63", linewidth=1.5)
 ax_force.set_ylabel(force_label)
 ax_force.set_xlabel("Time (s)")
 ax_force.grid(True, alpha=0.3)
+
 f_min, f_max = min(forces), max(forces)
-ax_force.set_title(f"Min: {f_min:,.0f}  Max: {f_max:,.0f}  "
-                   f"Range: {f_max - f_min:,.0f}", fontsize=9)
+f_range = f_max - f_min
+# Add padding so a flat line is still visible
+ax_force.set_ylim(f_min - max(f_range * 0.1, 1), f_max + max(f_range * 0.1, 1))
+ax_force.set_title(
+    f"Min: {f_min:,.0f}  Max: {f_max:,.0f}  Range: {f_range:,.0f}"
+    + ("  (HX711 not responding — check wiring)" if f_range == 0 else ""),
+    fontsize=9
+)
 
 plt.tight_layout()
 plt.show()
