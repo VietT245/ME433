@@ -7,16 +7,41 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/viet_tong/Desktop/Junior Year/Q3/ME433"/>
+			<item value="/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW16"/>
 			<item value="/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW11"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
 		<section name="ExternalProjectImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="463"/>
-			<item key="DIALOG_Y_ORIGIN" value="108"/>
+			<item key="DIALOG_X_ORIGIN" value="232"/>
+			<item key="DIALOG_Y_ORIGIN" value="107"/>
 			<item key="DIALOG_WIDTH" value="586"/>
 			<item key="DIALOG_HEIGHT" value="703"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/viet_tong/Desktop/Junior Year/Q3/ME433"/>
+		</list>
+		<section name="STSmartImportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="232"/>
+			<item key="DIALOG_Y_ORIGIN" value="210"/>
+			<item key="DIALOG_WIDTH" value="880"/>
+			<item key="DIALOG_HEIGHT" value="568"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
+		<section name="SmartImportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="85"/>
+			<item key="DIALOG_Y_ORIGIN" value="12"/>
+			<item key="DIALOG_WIDTH" value="880"/>
+			<item key="DIALOG_HEIGHT" value="627"/>
 			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
 		</section>
 	</section>

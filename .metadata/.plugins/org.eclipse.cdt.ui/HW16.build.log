@@ -19,3 +19,6 @@ In file included from ../Core/Inc/stm32c0xx_hal_conf.h:241,
       |                                    ~~~~~~~~~~~~~~~~~~~~^~~~~
 make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
 "make -j9 all" terminated with exit code 2. Build might be incomplete.
+
+06:53:52 Build Failed. 3 errors, 0 warnings. (took 137ms)
+

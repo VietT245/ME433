@@ -1,0 +1,330 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : RC Servo current controller with INA219 and DRV8833
+  *                   STM32 Nucleo-C092RC
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+
+/* USER CODE BEGIN Includes */
+#include <stdio.h>
+#include <string.h>
+/* USER CODE END Includes */
+
+/* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef  hadc1;
+TIM_HandleTypeDef  htim1;
+TIM_HandleTypeDef  htim2;
+I2C_HandleTypeDef  hi2c2;
+UART_HandleTypeDef huart2;
+
+/* USER CODE BEGIN PV */
+
+/* ── INA219 registers ────────────────────────────────────────────────────── */
+#define INA219_ADDR            0x40
+#define INA219_REG_CONFIG      0x00
+#define INA219_REG_SHUNT       0x01
+#define INA219_REG_BUS         0x02
+#define INA219_REG_POWER       0x03
+#define INA219_REG_CURRENT     0x04
+#define INA219_REG_CALIBRATION 0x05
+
+/* ── ADC safety limits ───────────────────────────────────────────────────── */
+#define ADC_MIN   250
+#define ADC_MAX   (4095 - 250)
+
+/* ── PWM ─────────────────────────────────────────────────────────────────── */
+#define PWM_PERIOD  2400        /* Counter Period set in CubeMX              */
+#define PWM_OFF     PWM_PERIOD  /* both channels high = motor off (coast)    */
+#define PWM_HALF    (PWM_PERIOD / 2)
+
+/* ── PI controller ───────────────────────────────────────────────────────── */
+#define KP               0.5f
+#define KI               0.01f
+#define DESIRED_CURRENT  300.0f   /* mA absolute value                       */
+#define LOG_SIZE         400      /* samples per run (= 400 ms at 1 kHz)     */
+
+/* ── State machine (shared between main and ISR) ─────────────────────────── */
+volatile uint8_t state = 0;   /* 0 = idle, 1 = run control loop             */
+
+/* ── Data log (filled in ISR, printed in main) ───────────────────────────── */
+static float    log_desired[LOG_SIZE];
+static float    log_actual [LOG_SIZE];
+static uint16_t log_adc    [LOG_SIZE];
+static uint32_t log_count  = 0;
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+static void MX_ADC1_Init(void);
+static void MX_TIM1_Init(void);
+static void MX_TIM2_Init(void);
+static void MX_I2C2_Init(void);
+
+/* USER CODE BEGIN PFP */
+uint32_t     read_adc(void);
+void         init_ina219(void);
+float        read_ina219(void);
+void         writeINA219(int reg, int value);
+signed short readINA219(unsigned char reg);
+void         motor_off(void);
+void         motor_drive(int pwm_ch1, int pwm_ch2);
+/* USER CODE END PFP */
+
+/* USER CODE BEGIN 0 */
+
+/* ── Redirect printf → USART2 (virtual COM port) ────────────────────────── */
+int __io_putchar(int ch)
+{
+    HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
+    return ch;
+}
+
+/* ── ADC ─────────────────────────────────────────────────────────────────── */
+uint32_t read_adc(void)
+{
+    uint32_t raw = 0;
+    HAL_ADC_Start(&hadc1);
+    if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)
+        raw = HAL_ADC_GetValue(&hadc1);
+    HAL_ADC_Stop(&hadc1);
+    return raw;
+}
+
+/* ── INA219 ──────────────────────────────────────────────────────────────── */
+void writeINA219(int reg, int value)
+{
+    uint8_t buf[3];
+    buf[0] = (uint8_t)reg;
+    buf[1] = (value >> 8) & 0xFF;
+    buf[2] =  value       & 0xFF;
+    HAL_I2C_Master_Transmit(&hi2c2, INA219_ADDR << 1, buf, 3, 10);
+}
+
+signed short readINA219(unsigned char reg)
+{
+    HAL_I2C_Master_Transmit(&hi2c2, INA219_ADDR << 1, &reg, 1, 10);
+    uint8_t buffer[2] = {0, 0};
+    HAL_I2C_Master_Receive(&hi2c2, INA219_ADDR << 1, buffer, 2, 10);
+    return (signed short)((buffer[0] << 8) | buffer[1]);
+}
+
+void init_ina219(void)
+{
+    /* 10-bit resolution, ±160 mV shunt range, 148 µs conversion time */
+    unsigned short calValue = 1024;
+    unsigned short config   = 0x018F;   /* 0b0000000110001111 */
+    writeINA219(INA219_REG_CALIBRATION, calValue);
+    writeINA219(INA219_REG_CONFIG,      config);
+}
+
+float read_ina219(void)
+{
+    signed short raw = readINA219(INA219_REG_CURRENT);
+    return raw / 3.0f;   /* raw units → mA */
+}
+
+/* ── Motor helpers ───────────────────────────────────────────────────────── */
+void motor_off(void)
+{
+    /* Both channels high = coast on DRV8833; never drive both low */
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, PWM_OFF);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, PWM_OFF);
+}
+
+/*
+ * motor_drive()
+ *   Forward:  pwm_ch1 = PWM_PERIOD (100%), pwm_ch2 = reduced duty
+ *   Reverse:  pwm_ch1 = reduced duty,      pwm_ch2 = PWM_PERIOD (100%)
+ *   Rule:     NEVER set both channels to 0 simultaneously.
+ */
+void motor_drive(int pwm_ch1, int pwm_ch2)
+{
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, (uint32_t)pwm_ch1);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, (uint32_t)pwm_ch2);
+}
+
+/* USER CODE END 0 */
+
+/* ── main ────────────────────────────────────────────────────────────────── */
+int main(void)
+{
+    /* USER CODE BEGIN 1 */
+    /* USER CODE END 1 */
+
+    HAL_Init();
+    SystemClock_Config();
+
+    /* Peripheral init (generated by CubeMX — do not edit) */
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
+    MX_ADC1_Init();
+    MX_TIM1_Init();
+    MX_TIM2_Init();
+    MX_I2C2_Init();
+
+    /* USER CODE BEGIN 2 */
+
+    init_ina219();
+
+    /* Both PWM channels high = motor off at startup */
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, PWM_OFF);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, PWM_OFF);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+
+    /* Start 1 kHz control / safety interrupt */
+    HAL_TIM_Base_Start_IT(&htim2);
+
+    printf("Ready.\r\n");
+    printf("  'a' = run current control (400 ms)\r\n");
+    printf("  't' = motor test (50%% each direction, 0.5 s)\r\n");
+
+    /* USER CODE END 2 */
+
+    /* USER CODE BEGIN WHILE */
+    uint32_t last_print = HAL_GetTick();
+
+    while (1)
+    {
+        /* ── Print ADC + raw current 10 times per second ── */
+        if (HAL_GetTick() - last_print >= 100)
+        {
+            last_print = HAL_GetTick();
+            uint32_t     adc         = read_adc();
+            signed short raw_current = readINA219(INA219_REG_CURRENT);
+            printf("ADC: %4lu  Current (raw 1/3 mA): %6d\r\n",
+                   (unsigned long)adc, (int)raw_current);
+        }
+
+        /* ── Non-blocking character receive ── */
+        uint8_t ch = 0;
+        if (HAL_UART_Receive(&huart2, &ch, 1, 0) == HAL_OK)
+        {
+            /* ── 'a': run PI current control ── */
+            if (ch == 'a')
+            {
+                printf("Starting current control run...\r\n");
+                log_count = 0;
+                state     = 1;
+
+                /* Spin-wait; ISR sets state = 0 when done */
+                while (state != 0) {}
+
+                /* Stream CSV log back over serial */
+                printf("IDX,DESIRED_mA_x10,ACTUAL_mA_x10,ADC\r\n");
+                for (uint32_t i = 0; i < log_count; i++)
+                {
+                    int d = (int)(log_desired[i] * 10.0f);
+                    int a = (int)(log_actual [i] * 10.0f);
+                    printf("%lu,%d,%d,%u\r\n",
+                           (unsigned long)i, d, a,
+                           (unsigned int)log_adc[i]);
+                }
+                printf("Done.\r\n");
+            }
+
+            /* ── 't': quick motor test ── */
+            else if (ch == 't')
+            {
+                printf("Forward 0.5 s...\r\n");
+                motor_drive(PWM_PERIOD, PWM_HALF);
+                HAL_Delay(500);
+                motor_off();
+                HAL_Delay(100);
+
+                printf("Reverse 0.5 s...\r\n");
+                motor_drive(PWM_HALF, PWM_PERIOD);
+                HAL_Delay(500);
+                motor_off();
+
+                printf("Motor test done.\r\n");
+            }
+        }
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+    }
+    /* USER CODE END 3 */
+}
+
+/* USER CODE BEGIN 4 */
+
+/*
+ * HAL_TIM_PeriodElapsedCallback
+ * Called by the HAL every time TIM2 overflows (1 kHz).
+ * Runs the safety check every tick, and the PI controller when state == 1.
+ */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim != &htim2) return;
+
+    /* ── Safety endstop: kill motor if potentiometer out of range ── */
+    uint32_t adc = read_adc();
+    if (adc < ADC_MIN || adc > ADC_MAX)
+    {
+        motor_off();
+        if (state == 1) state = 0;   /* abort any running control loop */
+        return;
+    }
+
+    /* ── PI current control loop ── */
+    if (state == 1)
+    {
+        static uint32_t counter  = 0;
+        static float    integral = 0.0f;
+
+        /* Desired current: forward for first 200 cycles, reverse for next 200 */
+        float desired = (counter < 200) ? DESIRED_CURRENT : -DESIRED_CURRENT;
+
+        float actual  = read_ina219();
+        float error   = desired - actual;
+        integral     += error;
+
+        /* Anti-windup clamp */
+        if (integral >  5000.0f) integral =  5000.0f;
+        if (integral < -5000.0f) integral = -5000.0f;
+
+        float output = KP * error + KI * integral;
+
+        /* Map output → PWM duty.  Positive = forward, negative = reverse. */
+        int duty = (int)output;
+        if (duty >  PWM_PERIOD) duty =  PWM_PERIOD;
+        if (duty < -PWM_PERIOD) duty = -PWM_PERIOD;
+
+        if (duty >= 0)
+            motor_drive(PWM_PERIOD,        PWM_PERIOD - duty);
+        else
+            motor_drive(PWM_PERIOD + duty, PWM_PERIOD);
+
+        /* Log */
+        if (log_count < LOG_SIZE)
+        {
+            log_desired[log_count] = desired;
+            log_actual [log_count] = actual;
+            log_adc    [log_count] = (uint16_t)adc;
+            log_count++;
+        }
+
+        counter++;
+
+        /* End of run */
+        if (counter >= LOG_SIZE)
+        {
+            motor_off();
+            counter  = 0;
+            integral = 0.0f;
+            state    = 0;
+        }
+    }
+}
+
+/* USER CODE END 4 */

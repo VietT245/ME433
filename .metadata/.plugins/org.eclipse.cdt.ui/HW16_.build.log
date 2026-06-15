@@ -1,0 +1,10 @@
+06:19:44 **** Incremental Build of configuration Debug for project HW16_ ****
+make -j9 all 
+arm-none-eabi-size  HW16_.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16840	     36	   2084	  18960	   4a10	HW16_.elf
+Finished building: default.size.stdout
+ 
+
+06:19:44 Build Finished. 0 errors, 0 warnings. (took 138ms)
+
