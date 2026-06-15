@@ -2066,3 +2066,24 @@ arm-none-eabi-size  HW16.elf
   35176	    140	   2540	  37856	   93e0	HW16.elf
 Finished building: default.size.stdout
  
+12:32:59 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35176	    140	   2540	  37856	   93e0	HW16.elf
+Finished building: default.size.stdout
+ 
+12:34:26 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35176	    140	   2540	  37856	   93e0	HW16.elf
+Finished building: default.size.stdout
+ 
+12:37:37 **** Incremental Build of configuration Debug for project HW16 ****
+make -j9 all 
+arm-none-eabi-size  HW16.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35176	    140	   2540	  37856	   93e0	HW16.elf
+Finished building: default.size.stdout
+ 
