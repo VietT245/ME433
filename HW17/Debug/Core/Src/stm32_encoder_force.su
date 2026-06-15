@@ -1,0 +1,4 @@
+../Core/Src/stm32_encoder_force.c:54:17:AS5600_ReadRawAngle	24	static
+../Core/Src/stm32_encoder_force.c:63:14:AS5600_RawToDegrees	16	static
+../Core/Src/stm32_encoder_force.c:71:16:HX711_Read	32	static,ignoring_inline_asm
+../Core/Src/stm32_encoder_force.c:107:6:EncoderForce_Stream	48	static

@@ -1,13 +1,17 @@
-14:04:22 **** Incremental Build of configuration Debug for project HW17 ****
+16:09:38 **** Incremental Build of configuration Debug for project HW17 ****
 make -j9 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32C092xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32C0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "HW17.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW17/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW17.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STMicroelectronics/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: ./Core/Startup/startup_stm32c092rctx.o: in function `Reset_Handler':
-/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW17/Debug/../Core/Startup/startup_stm32c092rctx.s:91:(.text.Reset_Handler+0x32): undefined reference to `main'
-/Applications/STMicroelectronics/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: (main): Unknown destination type (ARM/Thumb) in ./Core/Startup/startup_stm32c092rctx.o
-/Users/viet_tong/Desktop/Junior Year/Q3/ME433/HW17/Debug/../Core/Startup/startup_stm32c092rctx.s:91:(.text.Reset_Handler+0x32): dangerous relocation: unsupported relocation
-collect2: error: ld returned 1 exit status
-make: *** [makefile:65: HW17.elf] Error 1
-"make -j9 all" terminated with exit code 2. Build might be incomplete.
+Finished building target: HW17.elf
+ 
+arm-none-eabi-size  HW17.elf 
+arm-none-eabi-objdump -h -S HW17.elf  > "HW17.list"
+   text	   data	    bss	    dec	    hex	filename
+  23348	    128	   2416	  25892	   6524	HW17.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW17.list
+ 
 
-14:04:22 Build Failed. 4 errors, 0 warnings. (took 130ms)
+16:09:39 Build Finished. 0 errors, 0 warnings. (took 482ms)
 

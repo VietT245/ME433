@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HW17/Core/Inc/stm32_encoder_force_h&apos; to &apos;stm32_encoder_force.h&apos;" description="Rename resource &apos;stm32_encoder_force_h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/stm32_encoder_force_h" name="stm32_encoder_force.h" stamp="1781550708802" updateReferences="true"/>
+</session>
