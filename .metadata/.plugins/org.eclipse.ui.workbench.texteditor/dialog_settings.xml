@@ -3,6 +3,11 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="burn"/>
+		<item value="huart"/>
+		<item value="EncoderForce_Stream"/>
+		<item value="i2c_hand"/>
+		<item value="Mx_g"/>
 		<item value="adcValu"/>
 		<item value="extern"/>
 		<item value="BSP_COM"/>
@@ -13,8 +18,5 @@
 		<item value="BSP_COM_INIT"/>
 		<item value="BSP_COM_INIT("/>
 		<item value="pc"/>
-		<item value="CAN"/>
-		<item value="Error"/>
-		<item value="MX_FD"/>
 	</list>
 </section>
